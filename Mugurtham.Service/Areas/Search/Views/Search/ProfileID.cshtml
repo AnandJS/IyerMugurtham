@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "ProfileID";
+    <!--Layout = "~/Areas/Search/Views/Shared/LayoutSearch.cshtml";-->
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+}
+<!-- Tabs-->
+<div id="divnavBarSearch">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#ProfileID" id="tabProfileID"><i class="fa fa-user" style="font-size:18px"></i>&nbsp; {{ 'GENPROFID' | translate }}</a></li>
+        <li><a href="#AllProfiles" id="tabAllProfiles"><i class="fa fa-users" style="font-size:18px"></i>&nbsp; {{ 'LYTSRCALLPROF' | translate }}</a></li>
+        <li><a href="#GeneralSearch" id="tabGeneralSearch"><i class="fa fa-search" style="font-size:18px"></i>&nbsp; {{ 'LYTGENSRC' | translate }}</a></li>
+        <li><a href="#SangamSearch" id="tabSangamSearch"><i class="fa fa-building-o" style="font-size:18px"></i>&nbsp; {{ 'LYTSGMSRC' | translate }}</a></li>
+    </ul>
+</div>
+<br />
+
+<div class="col-lg-8" data-ng-init="hideDiv();">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                {{ 'SRCIDPROFID' | translate }}
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="NomineeName" class="col-lg-3 control-label">{{ 'GENPROFID' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNomineeName" name="txtNomineeName" ng-model="frmData[0].ProfileID" placeholder="Profile ID">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary" ng-click="getByProfileID();">{{ 'LYTSRCH' | translate }}</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'SRCIDHLP' | translate }}</p>
+    </blockquote>
+</div>
+<br />
+<div class="modal fade alert" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel">Search by Profile ID - {{AllProfiles[0].MugurthamProfileID}}</h3>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-primary FormShadow">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">
+                            {{AllProfiles[0].Name }}
+                        </h3>
+                    </div>
+                    <div class="panel-body bgImage">
+                        <table class="mugurthamTable">
+                            <tr>
+                                <td width="25%" class="FormShadow">
+                                    <div class="flexslider">
+                                        <ul class="slides">
+                                            <li ng-repeat="objProfilePhoto in MyAllProfiles.PhotoCoreEntityList | filter: {ProfileID: AllProfiles[0].MugurthamProfileID}">
+                                                <img src="{{objProfilePhoto.PhotoPath }}" class="img-thumbnail" style="height:200px; width:350px" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td width="85%" valign="top">
+                                    <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                        <tr>
+                                            <td class="col-lg-3">{{ 'GENPROFID' | translate}}</td>
+                                            <td class="col-lg-9"><a href="#/FullView/{{AllProfiles[0].MugurthamProfileID}}" target="_blank">{{AllProfiles[0].MugurthamProfileID }}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ 'BIAGE' | translate}}</td>
+                                            <td>{{AllProfiles[0].Age }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ 'BIGEN' | translate}}</td>
+                                            <td>{{AllProfiles[0].Gender }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ 'LYTPRFTABLOC' | translate}}</td>
+                                            <td>{{AllProfiles[0].CountryLivingIn }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ 'CREDUC' | translate}}</td>
+                                            <td>{{AllProfiles[0].Education }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ 'CROCCPTN' | translate}}</td>
+                                            <td>{{AllProfiles[0].Occupation }}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" colspan="2">
+                                    <br />
+                                    {{AllProfiles[0].AboutMe }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="panel-footer">© {{'GENCOPYRT' | translate }} 2013 - {{AllProfiles[0].SangamName }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .center {
+        margin-top: 50px;
+    }
+
+    .modal-header {
+        padding-bottom: 5px;
+    }
+
+    .modal-footer {
+        padding: 0;
+    }
+
+        .modal-footer .btn-group button {
+            height: 40px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border: none;
+        }
+
+        .modal-footer .btn-group:last-child > button {
+            border-right: 0;
+        }
+</style>
+<!-- Popup Modal Window - END -->

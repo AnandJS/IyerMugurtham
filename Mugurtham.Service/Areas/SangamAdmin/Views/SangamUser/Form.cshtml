@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Areas/SangamAdmin/Views/Shared/LayoutSangamAdmin.cshtml";
+}
+<p class="lead">User Form</p>
+<hr />
+<div class="col-lg-12" data-ng-init="getLookup();">
+    <ul class="breadcrumb">
+        <li><a href="#SangamUserList">List</a></li>
+        <li class="active">Form</li>
+    </ul>
+    <div class="col-lg-8">
+        <div class="panel panel-primary bs-example well bs-component FormShadow">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">User Registration Form
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="UserName" class="col-lg-3 control-label">User Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" ng-model="userFormData[0].Name" placeholder="Name of the User">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="LoginID" class="col-lg-3 control-label">Login ID</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" ng-model="userFormData[0].LoginID" placeholder="Login ID to login to Mugurtham">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Password" class="col-lg-3 control-label">Password</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control" id="txtPassword" name="txtPassword" ng-model="userFormData[0].Password" placeholder="Enter password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Theme" class="col-lg-3 control-label">Theme</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" ng-model="userFormData[0].ThemeID">
+                                        <option value="Bootstrap">Bootstrap</option>
+                                        <option value="Cerulean">Cerulean</option>
+                                        <option value="Cyborg">Cyborg</option>
+                                        <option value="Darkly">Darkly</option>
+                                        <option value="Flatly">Flatly</option>
+                                        <option value="Lumen">Lumen</option>
+                                        <option value="Paper">Paper</option>
+                                        <option value="Readable">Readable</option>
+                                        <option value="Simplex">Simplex</option>
+                                        <option value="Slate">Slate</option>
+                                        <option value="Spacelab">Spacelab</option>
+                                        <option value="Superhero">Superhero</option>
+                                        <option value="United">United</option>
+                                        <option value="Yeti">Yeti</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Locale" class="col-lg-3 control-label">Locale</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlLocale" ng-model="userFormData[0].LocaleID">
+                                        <option value="0409">English</option>
+                                        <option value="0449">Tamil</option>
+                                        <option value="0439">Hindi</option>
+                                        <option value="044a">Telgu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="IsActivated" class="col-lg-3 control-label">IsActivated</label>
+                                <div class="checkbox col-lg-9">
+                                    <label>
+                                        <input type="checkbox" value="1" class="userActivationCheckbox" id="chkIsActivated" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="IsHighlighted" class="col-lg-3 control-label">IsHighlighted</label>
+                                <div class="checkbox col-lg-9">
+                                    <label>
+                                        <input type="checkbox" value="1" class="userHighlightedCheckbox" id="chkIsHighlighted" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ShowHoroscope" class="col-lg-3 control-label">ShowHoroscope</label>
+                                <div class="checkbox col-lg-9">
+                                    <label>
+                                        <input type="checkbox" value="1" class="userShowHoroscope" id="chkShowHoroscope" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-10">
+                                    <input type="hidden" class="form-control" ng-model="userFormData[0].SangamID">
+                                    <input type="hidden" class="form-control" ng-model="userFormData[0].RoleID">
+                                    <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <blockquote>
+            <p>This form is used to collect infomration about the User where the profiles are mapped to</p>
+        </blockquote>
+    </div>
+
+
+
+
+</div>
+

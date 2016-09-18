@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <link rel="stylesheet" href="@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Mask/jquery.loadmask.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mugurtham.js/JQuery/jquery-1.11.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mugurtham.js/Mugurtham/Login/Login.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mugurtham.js/JQuery/jquery.loadmask.js")"></script>
+    <meta charset="utf-8">
+    <link id="stylesheet" rel="stylesheet" href="@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Login/MugurthamLogin.css")" />
+    <title>Mugurtham Login</title>
+</head>
+<body>
+<H1><center><P style="font-color:red">  Please dont use this server for Data Entry. This is not a Production Server. This is a staging server. Data in this server will be deleted frequently</center></H1>
+    <div class="container">
+        <section id="content">
+            <form>
+                <h1>Viswakarma</h1>
+                <div>
+                    <input type="text" placeholder="Username" required="" id="LoginID" />
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" required="" id="Password" />
+                </div>
+                <div>
+                    <input id="btnLogin" type="button" value="Sign in" />
+                    <a id="linkPublicUser" style="cursor:pointer">Sign as a Public User</a>
+                </div>
+            </form>
+            <!-- form -->
+            <div class="button">
+            </div>
+            <!-- button -->
+        </section>
+        <!-- content -->
+    </div>
+    <div>
+        <br />
+        <br />
+        <table width="30%" border="1">
+            <tr>
+                <td></td>
+                <td><b>UserName</b></td>
+                <td><b>Password</b></td>
+            </tr>
+            <tr>
+                <td>Chennai Sangam User</td>
+                <td>CHN1001</td>
+                <td>CHN1001</td>
+            </tr>
+            <tr>
+                <td>Madurai Sangam User</td>
+                <td>MDU1001</td>
+                <td>MDU1001</td>
+            </tr>
+            <tr>
+                <td>Chennai Sangam Admin</td>
+                <td>chnadmin</td>
+                <td>admin</td>
+            </tr>
+            <tr>
+                <td>Madurai Sangam Admin</td>
+                <td>mduadmin</td>
+                <td>admin</td>
+            </tr>
+            <tr>
+                <td>Mugurtham Admin</td>
+                <td>administrator</td>
+                <td>admin</td>
+            </tr>
+        </table>
+    </div>
+    <!-- container -->
+</body>
+</html>

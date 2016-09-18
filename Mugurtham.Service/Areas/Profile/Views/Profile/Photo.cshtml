@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+    string strProfileID = string.Empty;
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+    strProfileID = objLoggedIn.LoginID;
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow" data-ng-init="getByProfileID();">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <center>{{ 'PHOIRF' | translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div>
+                        @using (Html.BeginForm("SaveProfilePhotoAlbum",
+            "Profile",
+            FormMethod.Post,
+            new { enctype = "multipart/form-data" }))
+                        {
+                            <label for="file">Upload Profile Photo:</label>
+                            <input type="file" name="file" id="file" multiple="multiple" /><br>
+                            <input type="submit" value="Upload Profile Photo" />
+                            <input type="hidden" name="ProfileID" id="ProfileID" /><br>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td align="right">
+                            Profile Picture <br />
+                            <img id="imgProfilePic" src="{{AllProfiles.BasicInfoCoreEntity.PhotoPath }}" width="120" height="120" />
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="tblPhotos">
+                <table width="100%">
+                    <tr ng-repeat="objProfilePhoto in AllProfiles.PhotoCoreEntityList">
+                        <td width="10%">
+
+                            <img src="{{objProfilePhoto.PhotoPath }}" width="120" height="120" />
+                            <br />
+                            <br />
+
+
+                        </td>
+                        <td width=" 90%">
+                            <a style="cursor:pointer" ng-click="updateProfileImage(AllProfiles,objProfilePhoto.PhotoPath);">Set as Profile Pic </a>
+                            <br />
+                            <a style="cursor:pointer" ng-click=" deleteProfileImage(objProfilePhoto.ID);"> Delete Pic</a>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'PHOHLP' | translate }}</p>
+    </blockquote>
+</div>
+
+
+

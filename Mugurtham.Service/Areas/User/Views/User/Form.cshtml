@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Form";
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+}
+<p class="lead">User Form</p>
+<div class="col-lg-12" data-ng-init="getUserByID();">
+    <ul class="breadcrumb">
+        <li><a href="#UserList">List</a></li>
+        <li class="active">Form</li>
+    </ul>
+    <div class="col-lg-8">
+        <div class="panel panel-primary bs-example well bs-component FormShadow">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">User Registration Form
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="UserName" class="col-lg-3 control-label">User Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtUserName" name="txtUserName" ng-model="frmData[0].Name" placeholder="Name of the User">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Password" class="col-lg-3 control-label">Password</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control" id="txtPassword" name="txtPassword" ng-model="frmData[0].Password" placeholder="Enter password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Sangam" class="col-lg-3 control-label">Sangam</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlSangam" ng-model="frmData[0].Sangam">
+                                        <option value="0">--Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Role" class="col-lg-3 control-label">Role</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlRole" ng-model="frmData[0].Role">
+                                        <option value="0">--Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Theme" class="col-lg-3 control-label">Theme</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlTheme" ng-model="frmData[0].Theme">
+                                        <option value="0">--Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Locale" class="col-lg-3 control-label">Locale</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" id="ddlLocale" ng-model="frmData[0].Locale">
+                                        <option value="0">--Select--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="IsActivated" class="col-lg-3 control-label">IsActivated</label>
+                                <div class="checkbox col-lg-9">
+                                    <label>
+                                        <input type="checkbox" id="chkIsActivated" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-10">
+                                    <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <blockquote>
+            <p>This form is used to collect infomration about the User where the profiles are mapped to</p>
+        </blockquote>
+    </div>
+
+
+
+
+</div>

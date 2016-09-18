@@ -1,0 +1,574 @@
+﻿@{
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+}
+<div data-ng-init="getByProfileID();">
+    <ul class="breadcrumb">
+        <li><a href="@objLoggedIn.HomePagePath" translate="">{{ 'GENHOME' | translate}}</a></li>
+        <li><a href="#ProfileID">{{ 'GENSRCH' | translate}}</a></li>
+        <li class="active">{{ 'GENVIEW' | translate}}</li>
+    </ul>
+</div>
+<div class="text-right" id="divInterestButton">
+    <button id="btnShowInterest" name="btnShowInterest" class="btn btn-primary" ng-click="showInterest();">Show Interest</button>
+    <button id="btnRemoveInterest" name="btnRemoveInterest" class="btn btn-primary" ng-click="removeInterest();">Remove Interest</button>
+    &nbsp;&nbsp;
+    <a href="javascript:PrintFullProfile();">Print Profile</a>
+</div>
+<div>
+    <br />
+</div>
+<!-- Full Profile View page-->
+<div id="divSangamInfomration" class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ "VWSGMINFOFORPROFID" || translate }} {{ globalProfileID }}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <table class="mugurthamTable">
+                <tr>
+                    <td width="30%">
+                        <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                            <tr>
+                                <td colspan="2">
+                                    <blockquote>
+                                        {{ 'VWRESTXT' | translate }}
+                                    </blockquote>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">{{ 'BINAME' | translate }}</td>
+                                <td>{{AllProfiles.SangamCoreEntity.Name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">{{ 'REFCONTNUM' | translate }}</td>
+                                <td>{{AllProfiles.SangamCoreEntity.ContactNumber }}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">{{ 'VWCTADRS' | translate }}</td>
+                                <td>{{AllProfiles.SangamCoreEntity.Address }}</td>
+                            </tr>
+                            <tr>
+                                <td class="col-lg-2">{{ 'VWABTSGM' | translate }}</td>
+                                <td>{{AllProfiles.SangamCoreEntity.AboutSangam }}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="divFullProfile" class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ 'VWFULLPROFVW' | translate }} {{globalProfileID}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <!-- ===================================================
+                Image and About Me Start
+                ====================================================
+                -->
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="panel panel-primary bgImage FormShadow">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">{{ 'GENABOUT' | translate }} - {{AllProfiles.BasicInfoCoreEntity.Name}}
+                        </h3>
+                    </div>
+                    <div class="panel-body" class="col-lg-12">
+                        <table width="100%">
+                            <tr>
+                                <td width="5%">
+                                    <a class="example-image-link" href="{{AllProfiles.BasicInfoCoreEntity.PhotoPath}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+                                        <img class="FormShadow" src="{{AllProfiles.BasicInfoCoreEntity.PhotoPath}}" width="180" height="190" />
+                                    </a>
+                                    <span style="visibility:hidden" ng-repeat="objProfilePhoto in AllProfiles.PhotoCoreEntityList">
+                                        <a class="example-image-link" href="{{objProfilePhoto.PhotoPath}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."></a>
+                                    </span>
+                                </td>
+                                <td>
+                                    <table width="100%">
+                                        <tr>
+                                            <td  class="text-justify">
+                                                <blockquote>
+                                                    {{ 'BIABTME' | translate }}:<br />
+                                                    <p>{{AllProfiles.BasicInfoCoreEntity.AboutMe}}</p>
+                                                </blockquote>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td  class="text-justify">
+                                                <blockquote>
+                                                    {{ 'BIPRTNTEXPTN' | translate }}:<br />
+                                                    <p>{{AllProfiles.BasicInfoCoreEntity.PartnerExpectation}}</p>
+                                                </blockquote>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12"></div>
+                <!-- 
+                ====================================================
+                Image and About Me End
+                ====================================================
+                -->
+
+                <!-- ===================================================
+                BasicInformation Start
+                ====================================================
+                -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="panel panel-primary bgImage FormShadow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">{{ 'LYTPRFTABBI' | translate }}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <table class="mugurthamTable">
+                                    <tr>
+                                        <td width="30%">
+                                            <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                <tr>
+                                                    <td class="col-lg-2">{{ 'GENPROFID' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.BasicInfoCoreEntity.ProfileID}}</td>
+                                                    <td class="col-lg-2">{{ 'BIAGE' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.BasicInfoCoreEntity.Age}}</td>
+                                                    <td class="col-lg-2">{{ 'BIGEN' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.BasicInfoCoreEntity.Gender}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BIDOB' | translate }}</td>
+                                                    <td><span id="dtDOB"></span></td>
+
+                                                    <td>{{ 'BITOB' | translate }} </td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.TamilDOB }}</td>
+
+                                                    <td>{{ 'BIMARSTATUS' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.MaritalStatus }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BINOOFCHIL' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.NoOfChildren }}</td>
+
+                                                    <td>{{ 'BIHEIGHT' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Height }}</td>
+
+                                                    <td>{{ 'BICHILLVNGST' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.ChildrenLivingStatus }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BIWEIGHT' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Weight }}</td>
+
+                                                    <td>{{ 'BICHILLVNGST' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.ChildrenLivingStatus }}</td>
+
+                                                    <td>{{ 'BIBDYTPE' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.BodyType }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BICOMPLEXION' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Complexion }}</td>
+
+                                                    <td>{{ 'BIBLGRP' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.BloodGroup }}</td>
+
+                                                    <td>{{ 'BIMOTONG' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.MotherTongue }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BIPROFCRBY' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.ProfileCreatedBy }}</td>
+
+                                                    <td>{{ 'BIRLGN' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Religion }}</td>
+
+                                                    <td>{{ 'BIGOTHRM' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Gothram }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BISTR' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Star }}</td>
+
+                                                    <td>{{ 'BIRAASI' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Raasi }}</td>
+
+                                                    <td>{{ 'BIPHYSTA' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.PhysicalStatus }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'BIETNG' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Eating }}</td>
+
+                                                    <td>{{ 'BIDRNKNG' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Drinking }}</td>
+
+                                                    <td>{{ 'BISMKNG' | translate }}</td>
+                                                    <td>{{AllProfiles.BasicInfoCoreEntity.Smoking }}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12"></div>
+                <!-- 
+                ====================================================
+                BasicInformation End
+                ====================================================
+                -->
+                <!-- ===================================================
+               Confidential Information Start
+                ====================================================-->
+                      <div id="divconfidentialInfo">
+                          <!-- ===================================================
+    Horoscope Start
+     ====================================================
+     -->
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-10">
+                              <div class="panel panel-primary bgImage FormShadow">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title text-center">
+                                          {{ 'LYTPRFTABHORO' | translate }}
+                                      </h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <div class="row">
+                                          <table class="mugurthamTable">
+                                              <tr>
+                                                  <td width="30%">
+                                                      <table class="mugurthamTable table-bordered table-hover FormShadow">
+                                                          <tbody>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam1}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam2}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam3}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam4}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam5}}</td>
+                                                                  <td colspan="2" rowspan="2" align="center" valign="middle" width="50%"><b>RAASI</b></td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam6}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam7}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam8}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam9}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam10}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam11}}</td>
+                                                                  <td width="25%">{{AllProfiles.RaasiCoreEntity.Kattam12}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td colspan="4"></td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam1}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam2}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam3}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam4}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam5}}</td>
+                                                                  <td colspan="2" rowspan="2" align="center" valign="middle" width="50%"><b>AMSAM</b></td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam6}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam7}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam8}}</td>
+                                                              </tr>
+                                                              <tr>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam9}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam10}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam11}}</td>
+                                                                  <td width="25%">{{AllProfiles.AmsamCoreEntity.Kattam12}}</td>
+                                                              </tr>
+                                                          </tbody>
+                                                      </table>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-12"></div>
+                          <!--
+    ====================================================
+    Horoscope End
+    ====================================================
+    -->
+                          <!-- ===================================================
+    Contact Start
+     ====================================================
+     -->
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-10">
+                              <div class="panel panel-primary bgImage FormShadow">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title text-center">
+                                          {{ 'LYTPRFTABCONT' | translate }}
+                                      </h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <div class="row">
+                                          <table class="mugurthamTable">
+                                              <tr>
+                                                  <td width="30%">
+                                                      <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                          <tr>
+                                                              <td class="col-lg-2">{{ 'CONEMAIL' | translate }}</td>
+                                                              <td class="col-lg-2">{{AllProfiles.ContactCoreEntity.Email}}</td>
+                                                              <td class="col-lg-2">{{ 'CONMOBNO' | translate }}</td>
+                                                              <td class="col-lg-2">{{AllProfiles.ContactCoreEntity.MobileNumber}}</td>
+                                                              <td class="col-lg-2">{{ 'CONLNDNO' | translate }}</td>
+                                                              <td class="col-lg-2">{{AllProfiles.ContactCoreEntity.LandlineNumber}}</td>
+                                                          </tr>
+                                                          <tr>
+                                                              <td>{{ 'CONRESADR' | translate }}</td>
+                                                              <td>{{AllProfiles.ContactCoreEntity.ResidentialAddress }}</td>
+                                                              <td>{{ 'CONREL' | translate }}</td>
+                                                              <td>{{AllProfiles.ContactCoreEntity.Relationship }}</td>
+                                                              <td>{{ 'CONTMETOCALL' | translate }} </td>
+                                                              <td>{{AllProfiles.ContactCoreEntity.TimeToCall }}</td>
+                                                          </tr>
+                                                      </table>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-12"></div>
+                          <!--
+    ====================================================
+    Contact End
+    ====================================================
+    -->
+                          <!-- ===================================================
+             Reference Start
+              ====================================================
+              -->
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-10">
+                              <div class="panel panel-primary bgImage FormShadow">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title text-center">
+                                          {{ 'LYTPRFTABREF' | translate }}
+                                      </h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <div class="row">
+                                          <table class="mugurthamTable">
+                                              <tr>
+                                                  <td width="30%">
+                                                      <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                          <tr>
+                                                              <td>{{ 'REFNOMNAME' | translate }}</td>
+                                                              <td>{{AllProfiles.ReferenceCoreEntity.NomineeName }}</td>
+                                                              <td>{{ 'REFCONTNUM' | translate }}</td>
+                                                              <td>{{AllProfiles.ReferenceCoreEntity.ContactNo }}</td>
+                                                          </tr>
+                                                      </table>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-1"></div>
+                          <div class="col-lg-12"></div>
+                          <!--
+    ====================================================
+    Reference End
+    ====================================================
+    -->
+
+
+
+
+
+                      </div>
+                    <!-- ===================================================
+               Confidential Information End
+                ====================================================-->
+
+            
+                <!-- ===================================================
+               Career Start
+                ====================================================
+                -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="panel panel-primary bgImage FormShadow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">{{ 'LYTPRFTABCAR' | translate }}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <table class="mugurthamTable">
+                                    <tr>
+                                        <td width="30%">
+                                            <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                <tr>
+                                                    <td class="col-lg-2">{{ 'CREDUC' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.CareerCoreEntity.Education}}</td>
+                                                    <td class="col-lg-2">{{ 'CREDUCDT' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.CareerCoreEntity.EducationInDetail}}</td>
+                                                    <td class="col-lg-2">{{ 'CREMPIN' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.CareerCoreEntity.EmployedIn}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'CROCCPTN' | translate }}</td>
+                                                    <td>{{AllProfiles.CareerCoreEntity.Occupation }}</td>
+                                                    <td>{{ 'CROCCPTNDTL' | translate }}</td>
+                                                    <td>{{AllProfiles.CareerCoreEntity.OccupationInDetail }}</td>
+                                                    <td>{{ 'CRANINC' | translate }}</td>
+                                                    <td>{{AllProfiles.CareerCoreEntity.AnnualIncome }}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12"></div>
+                <!-- 
+                ====================================================
+                Career End
+                ====================================================
+                -->
+             
+                <!-- ===================================================
+               Family Start
+                ====================================================
+                -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="panel panel-primary bgImage FormShadow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">{{ 'LYTPRFTABFAM' | translate }} 
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <table class="mugurthamTable">
+                                    <tr>
+                                        <td width="30%">
+                                            <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                <tr>
+                                                    <td class="col-lg-2">{{ 'FAMVAL' | translate }} </td>
+                                                    <td class="col-lg-2">{{AllProfiles.FamilyCoreEntity.FamilyValue}}</td>
+                                                    <td class="col-lg-2">{{ 'FAMTYP' | translate }} </td>
+                                                    <td class="col-lg-2">{{AllProfiles.FamilyCoreEntity.FamilType}}</td>
+                                                    <td class="col-lg-2">{{ 'FAMSTA' | translate }} </td>
+                                                    <td class="col-lg-2">{{AllProfiles.FamilyCoreEntity.FamilyStatus}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'FAMFATNAM' | translate }} </td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.FathersName }}</td>
+                                                    <td>{{ 'FAMMOTNAM' | translate }}</td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.Mothersname }}</td>
+                                                    <td>{{ 'FAMFATOCC' | translate }}</td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.FathersOccupation }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'FAMMOTOCC' | translate }}</td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.MothersOccupation }}</td>
+                                                    <td>{{ 'FAMANSFAMORG' | translate }}</td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.FamilyOrigin }}</td>
+                                                    <td>{{ 'FAMABTFAM' | translate }} </td>
+                                                    <td>{{AllProfiles.FamilyCoreEntity.AboutFamily }}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12"></div>
+                <!-- 
+                ====================================================
+                Family End
+                ====================================================
+                -->
+                <!-- ===================================================
+               Location Start
+                ====================================================
+                -->
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="panel panel-primary bgImage FormShadow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title text-center">{{ 'LYTPRFTABLOC' | translate }}
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <table class="mugurthamTable">
+                                    <tr>
+                                        <td width="30%">
+                                            <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                                <tr>
+                                                    <td class="col-lg-2">{{ 'LOCTRYLVNIN' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.LocationCoreEntity.CountryLivingIn}}</td>
+                                                    <td class="col-lg-2">{{ 'LOCTNSHP' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.LocationCoreEntity.CitizenShip}}</td>
+                                                    <td class="col-lg-2">{{ 'LOCRESSTS' | translate }}</td>
+                                                    <td class="col-lg-2">{{AllProfiles.LocationCoreEntity.ResidentStatus}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ 'LOCRESTATE' | translate }}</td>
+                                                    <td>{{AllProfiles.LocationCoreEntity.ResidingState }}</td>
+                                                    <td>{{ 'LOCRESCTY' | translate }}</td>
+                                                    <td>{{AllProfiles.LocationCoreEntity.ResidingCity }}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-12"></div>
+                <!-- 
+                ====================================================
+                Location End
+                ====================================================
+                -->
+          
+
+            </div>
+        </div>
+        <div class="panel-footer">© {{ 'GENCOPYRT' | translate }} - {{AllProfiles.SangamCoreEntity.Name }}</div>
+    </div>
+</div>
+ 

@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <center>{{ 'FAMIRF' | translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="FamilyValue" class="col-lg-3 control-label">{{ 'FAMVAL' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlFamilyvalue" ng-model="frmData[0].Familyvalue">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="FamilyValue in arrFamilyValue">{{FamilyValue}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="FamilyType" class="col-lg-3 control-label">{{ 'FAMTYP' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlFamilyType" ng-model="frmData[0].FamilyType">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="FamilyType in arrFamilyType">{{FamilyType}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="FamilyStatus" class="col-lg-3 control-label">{{ 'FAMSTA' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlFamilyStatus" ng-model="frmData[0].FamilyStatus">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="FamilyStatus in arrFamilyStatus">{{FamilyStatus}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="FathersName" class="col-lg-3 control-label">{{ 'FAMFATNAM' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtFathersName" name="txtFathersName" ng-model="frmData[0].FathersName" placeholder="Name of the profiles father">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="MothersName" class="col-lg-3 control-label">{{ 'FAMMOTNAM' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtMothersName" name="txtMothersName" ng-model="frmData[0].MothersName" placeholder="Name of the profiles mother">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="FathersOccupation" class="col-lg-3 control-label">{{ 'FAMFATOCC' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtFathersOccupation" name="txtFathersOccupation" ng-model="frmData[0].FathersOccupation" placeholder="FathersOccupation">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="MothersOccupation" class="col-lg-3 control-label">{{ 'FAMMOTOCC' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtMothersOccupation" name="txtMothersOccupation" ng-model="frmData[0].MothersOccupation" placeholder="What do profiles mother work">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Origin" class="col-lg-3 control-label">{{ 'FAMANSFAMORG' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtFamilyOrigin" name="txtFamilyOrigin" ng-model="frmData[0].FamilyOrigin" placeholder="Tell about profiles origin">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="No of Brothers" class="col-lg-3 control-label">{{ 'FAMNOOFBRO' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlNoOfBrothers" ng-model="frmData[0].NoOfBrothers">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Siblings in arrSiblings">{{Siblings}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Married Brothers" class="col-lg-3 control-label">{{ 'FAMMARDBRO' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlMarriedBrothers" ng-model="frmData[0].MarriedBrothers">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Siblings in arrSiblings">{{Siblings}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="No of Sisters" class="col-lg-3 control-label">{{ 'FAMNOOFSIS' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlNoOfSisters" ng-model="frmData[0].NoOfSisters">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Siblings in arrSiblings">{{Siblings}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Married Sisters" class="col-lg-3 control-label">{{ 'FAMMARDSIS' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" ng-model="frmData[0].MarriedSisters">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Siblings in arrSiblings">{{Siblings}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="About Family" class="col-lg-3 control-label">{{ 'FAMABTFAM' | translate }}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" rows="3" id="txtAboutFamily" name="txtAboutFamily" ng-model="frmData[0].AboutFamily" placeholder="Tell about profiles family"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{ 'GENSAVE' | translate }}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'FAMHELP' | translate }}</p>
+    </blockquote>
+</div>
+
+

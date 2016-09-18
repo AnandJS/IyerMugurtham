@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <center>{{ 'REFIRF' | translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="NomineeName" class="col-lg-3 control-label">{{ 'REFNOMNAME' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtNomineeName" name="txtNomineeName" ng-model="frmData[0].NomineeName" placeholder="Nominee Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactNumber" class="col-lg-3 control-label">{{ 'REFCONTNUM' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtContactNumber" name="txtContactNumber" ng-model="frmData[0].ContactNumber" placeholder="Contact Number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{ 'GENSAVE' | translate }}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'REFHLP' | translate }}</p>
+    </blockquote>
+</div>
+
+
+

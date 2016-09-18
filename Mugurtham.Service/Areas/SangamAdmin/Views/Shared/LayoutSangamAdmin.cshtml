@@ -1,0 +1,47 @@
+﻿<!--
+    THIS PAGE IS THE LAYOUT PAGE FOR THE SANGAM ADMIN MODULE
+    -->
+<!-- Rending Body from child page-->
+<ul class="breadcrumb">
+    <li class="active">Home</li>
+</ul>
+<div class="panel panel-primary bs-example FormShadow">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Sangam Administration</h3>
+        @RenderSection("featured", required: false)
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-sm-3">
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#ProfileID">Search</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#BasicInfo/New">New Profile</a>
+                    </li>
+                    <li class="list-group-item">
+                       <a href="#SangamAdminProfiles">Profiles</a> 
+                    </li>
+                     <li class="list-group-item">
+                        <a href="#SangamUserList">Users</a>
+                    </li>
+                    <li class="list-group-item">Reports
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#SangamAdminSettings">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+
+
+
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

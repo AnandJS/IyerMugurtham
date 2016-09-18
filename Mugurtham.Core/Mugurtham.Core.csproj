@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7409288-A372-4E10-91A4-938C67623BD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mugurtham.Core</RootNamespace>
+    <AssemblyName>Mugurtham.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dashboard\Sangam\SangamDashboardCore.cs" />
+    <Compile Include="Dashboard\Sangam\SangamDashboardCoreEntity.cs" />
+    <Compile Include="ProfileInterested\ProfileInterestedCore.cs" />
+    <Compile Include="ProfileInterested\ProfileInterestedCoreEntity.cs" />
+    <Compile Include="ProfileViewed\ProfileViewedCore.cs" />
+    <Compile Include="ProfileViewed\ProfileViewedCoreEntity.cs" />
+    <Compile Include="Profile\Horoscope\Amsam\AmsamCore.cs" />
+    <Compile Include="Profile\Horoscope\Amsam\AmsamCoreEntity.cs" />
+    <Compile Include="Profile\BasicInfo\BasicInfoCore.cs" />
+    <Compile Include="Profile\BasicInfo\BasicInfoCoreEntity.cs" />
+    <Compile Include="Profile\Career\CareerCore.cs" />
+    <Compile Include="Profile\Career\CareerCoreEntity.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Profile\Contact\ContactCore.cs" />
+    <Compile Include="Profile\Contact\ContactCoreEntity.cs" />
+    <Compile Include="Profile\Family\FamilyCore.cs" />
+    <Compile Include="Profile\Family\FamilyCoreEntity.cs" />
+    <Compile Include="Profile\Horoscope\HoroscopeCore.cs" />
+    <Compile Include="Profile\Horoscope\HoroscopeCoreEntity.cs" />
+    <Compile Include="Profile\Location\LocationCore.cs" />
+    <Compile Include="Profile\Location\LocationCoreEntity.cs" />
+    <Compile Include="Login\LoggedInUser.cs" />
+    <Compile Include="Lookup\LookupCore.cs" />
+    <Compile Include="Lookup\LookupEntity.cs" />
+    <Compile Include="Profile\Photo\PhotoCore.cs" />
+    <Compile Include="Profile\Photo\PhotoCoreEntity.cs" />
+    <Compile Include="Profile\ProfileCore.cs" />
+    <Compile Include="Profile\View\PorfileBasicInfoViewCore.cs" />
+    <Compile Include="Profile\View\ProfileBasicInfoViewCoreEntity.cs" />
+    <Compile Include="Profile\View\ProfileBasicViewEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Profile\Horoscope\Raasi\RaasiCore.cs" />
+    <Compile Include="Profile\Horoscope\Raasi\RaasiCoreEntity.cs" />
+    <Compile Include="Profile\Reference\ReferenceCore.cs" />
+    <Compile Include="Profile\Reference\ReferenceCoreEntity.cs" />
+    <Compile Include="Role\RoleCore.cs" />
+    <Compile Include="Role\RoleCoreEntity.cs" />
+    <Compile Include="Sangam\SangamCore.cs" />
+    <Compile Include="Sangam\SangamCoreEntity.cs" />
+    <Compile Include="User\UserCore.cs" />
+    <Compile Include="User\UserCoreEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mugurtham.Common\Mugurtham.Common.csproj">
+      <Project>{521c4a90-817a-49cc-902d-cb0f661c05e8}</Project>
+      <Name>Mugurtham.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mugurtham.DTO\Mugurtham.DTO.csproj">
+      <Project>{3c8ee34a-7b20-443d-890f-a3867aebfd57}</Project>
+      <Name>Mugurtham.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mugurtham.Repository\Mugurtham.Repository.csproj">
+      <Project>{45aceb41-2292-49f6-aeb8-1fd438423570}</Project>
+      <Name>Mugurtham.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mugurtham.UOW\Mugurtham.UOW.csproj">
+      <Project>{d3140ee2-14b8-4c24-9842-efc1462f7d25}</Project>
+      <Name>Mugurtham.UOW</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

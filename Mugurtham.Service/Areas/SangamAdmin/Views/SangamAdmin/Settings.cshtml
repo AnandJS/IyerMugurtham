@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Areas/SangamAdmin/Views/Shared/LayoutSangamAdmin.cshtml";    
+}
+
+<h2>Settings</h2>
+<hr />
+<ul class="breadcrumb">
+    <li class="active">Home</li>
+</ul>
+ <div>
+        @using (Html.BeginForm("SaveSangamLogo",
+                        "SangamAdmin",  
+                        FormMethod.Post,  
+                        new { enctype = "multipart/form-data" }))  
+{                    
+    <label for="file">Upload Sangam Logo:</label>  
+    <input type="file" name="file" id="file"/><br><br>  
+    <input type="submit" value="Upload Sangam Logo"/>  
+    <br><br>  
+    @ViewBag.Message  
+}
+    </div>
+
+ <div>
+        @using (Html.BeginForm("SaveSangamBanner",
+                        "SangamAdmin",  
+                        FormMethod.Post,  
+                        new { enctype = "multipart/form-data" }))  
+{                    
+    <label for="file">Upload Sangam Banner:</label>  
+    <input type="file" name="file" id="file"/><br><br>  
+    <input type="submit" value="Upload Sangam Banner"/>  
+    <br><br>  
+    @ViewBag.Message  
+}
+    </div>
+

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <center>{{ 'LOCIRF' | translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="CountryLivingIn" class="col-lg-3 control-label">{{ 'LOCTRYLVNIN' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCountryLivingIn" name="txtCountryLivingIn" ng-model="frmData[0].CountryLivingIn" placeholder="Country Living In">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Citizenship" class="col-lg-3 control-label">{{ 'LOCTNSHP' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtCitizenship" name="txtCitizenship" ng-model="frmData[0].Citizenship" placeholder="Citizenship">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ResidentialStatus" class="col-lg-3 control-label">{{ 'LOCRESSTS' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtResidentialStatus" name="txtResidentialStatus" ng-model="frmData[0].ResidentialStatus" placeholder="ResidentialStatus">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ResidentState" class="col-lg-3 control-label">{{ 'LOCRESTATE' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtResidentState" name="txtResidentState" ng-model="frmData[0].ResidentState" placeholder="ResidentState">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ResidentCity" class="col-lg-3 control-label">{{ 'LOCRESCTY' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtResidentCity" name="txtResidentCity" ng-model="frmData[0].ResidentCity" placeholder="ResidentCity">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{ 'GENSAVE' | translate }}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'LOCHLP' | translate }}</p>
+    </blockquote>
+</div>
+
+
+

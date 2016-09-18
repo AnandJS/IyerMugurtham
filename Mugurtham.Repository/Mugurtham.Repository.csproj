@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45ACEB41-2292-49F6-AEB8-1FD438423570}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mugurtham.Repository</RootNamespace>
+    <AssemblyName>Mugurtham.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ProfileInterested\IProfileInterested.cs" />
+    <Compile Include="ProfileInterested\ProfileInterested.cs" />
+    <Compile Include="ProfileViewed\IProfileViewed.cs" />
+    <Compile Include="ProfileViewed\ProfileViewed.cs" />
+    <Compile Include="Profile\Amsam\Amsam.cs" />
+    <Compile Include="Profile\Amsam\IAmsam.cs" />
+    <Compile Include="Profile\BasicInfo\BasicInfo.cs" />
+    <Compile Include="Profile\BasicInfo\IBasicInfo.cs" />
+    <Compile Include="Profile\Career\Career.cs" />
+    <Compile Include="Profile\Career\ICareer.cs" />
+    <Compile Include="Profile\Contact\Contact.cs" />
+    <Compile Include="Profile\Contact\IContact.cs" />
+    <Compile Include="Dashboard\Sangam\Dashboard.cs" />
+    <Compile Include="Dashboard\Sangam\IDashboard.cs" />
+    <Compile Include="Profile\Family\Family.cs" />
+    <Compile Include="Profile\Family\IFamily.cs" />
+    <Compile Include="Profile\Location\ILocation.cs" />
+    <Compile Include="Profile\Location\Location.cs" />
+    <Compile Include="Profile\Photo\IPhoto.cs" />
+    <Compile Include="Profile\Photo\Photo.cs" />
+    <Compile Include="Profile\Raasi\IRaasi.cs" />
+    <Compile Include="Profile\Raasi\Raasi.cs" />
+    <Compile Include="Profile\Reference\IReference.cs" />
+    <Compile Include="Profile\Reference\Reference.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role\IRole.cs" />
+    <Compile Include="Role\Role.cs" />
+    <Compile Include="Sangam\ISangam.cs" />
+    <Compile Include="Sangam\Sangam.cs" />
+    <Compile Include="User\IUser.cs" />
+    <Compile Include="User\User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mugurtham.DAL\Mugurtham.DAL.csproj">
+      <Project>{d6a058d3-f449-47b0-8eef-cfdb3a3d9bc7}</Project>
+      <Name>Mugurtham.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mugurtham.DTO\Mugurtham.DTO.csproj">
+      <Project>{3c8ee34a-7b20-443d-890f-a3867aebfd57}</Project>
+      <Name>Mugurtham.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

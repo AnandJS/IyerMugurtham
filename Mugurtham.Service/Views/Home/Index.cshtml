@@ -1,0 +1,16 @@
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    @Scripts.Render("~/bundles/MugurthamJQuery")
+</head>
+<body>
+    @*HttpContext.Current.Server.MapPath("Index.cshml")*@
+    <script>
+        $(document).ready(function () {
+            window.location.href = "/Areas/HomePage/index.html";
+        });
+    </script>
+</body>
+</html>

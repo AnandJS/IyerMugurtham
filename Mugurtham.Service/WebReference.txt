@@ -1,0 +1,53 @@
+﻿
+Log4Net - File & Database configuration
+=======================================
+https://logging.apache.org/log4net/release/config-examples.html
+
+JSON Stringify
+==============
+http://stackoverflow.com/questions/23446916/getjson-and-return-the-value-string
+
+JQuery & JS BestPractices
+==========================
+https://www.smashingmagazine.com/2008/09/jquery-examples-and-best-practices/
+
+MVC 3 ,4 ,5 & vNext comaprison
+================================
+http://www.code-sample.com/2013/08/difference-between-mvc-4-and-mvc-5_17.html
+http://www.webdevelopmenthelp.net/2014/02/asp-net-mvc3-vs-mvc4-vs-mvc5.html
+
+Helped a lot to fix
+=====================
+http://stackoverflow.com/questions/22832435/mvc-razor-view-intellisense-broken-in-vs-2013
+
+FB Like API
+============
+https://developers.facebook.com/docs/plugins/like-button
+
+Encrypting Password
+=======================
+https://www.junian.net/2014/07/password-encryption-using-md5-hash.html (Selected for Muugurtham Password storage)
+https://crackstation.net/hashing-security.htm#normalhashing
+
+Exception Handling
+==================
+http://www.codeproject.com/Articles/850062/Exception-handling-in-ASP-NET-MVC-methods-explaine
+http://www.asp.net/web-api/overview/error-handling/exception-handling
+
+Business Layer Exception Handling
+=================================
+http://codereview.stackexchange.com/questions/63049/returning-status-codes-from-business-layer
+
+
+www.codeproject.com/Articles/420217/DataSet-vs-DataReader
+
+
+
+
+
+Snippets
+=======
+/*
+                $.each(data, function (index, value) {
+                    // $('#ddlSangam').append($('<option>').text(value.Name).attr('value', value.ID));
+                })*/

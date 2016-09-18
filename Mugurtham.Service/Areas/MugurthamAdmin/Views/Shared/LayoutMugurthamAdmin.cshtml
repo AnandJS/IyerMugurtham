@@ -1,0 +1,51 @@
+﻿<!--
+    THIS PAGE IS THE LAYOUT PAGE FOR THE MUGURTHAM ADMIN MODULE
+    -->
+<!-- Rending Body from child page-->
+<div>
+    <ul class="breadcrumb">
+        <li class="active">Home</li>
+    </ul>
+</div>
+<div class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading">
+        <h3 class="panel-title" translate="">Mugurtham Administration</h3>
+        
+        @RenderSection("featured", required: false)
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-3">
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="#ProfileID">{{ 'LYTSRCH' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">2</span>
+                        <a href="#MugurthamProfiles">{{ 'LYTPROFILES' | translate }}</a>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">2</span>
+                        <a href="#UserList">Users</a>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">2</span>
+                        <a href="#RoleList">Roles</a>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                        <a href="#SangamList">Sangams</a>
+                    </li>
+
+
+                    <li class="list-group-item">Reports
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

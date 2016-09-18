@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <center>{{ 'CONRF' | translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="Email" class="col-lg-3 control-label">{{ 'CONEMAIL' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" id="txtEmail" name="txtEmail" ng-model="frmData[0].Email" placeholder="Contact Email ID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Mobile Number" class="col-lg-3 control-label">{{ 'CONMOBNO' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtMobileNumber" name="txtMobileNumber" ng-model="frmData[0].MobileNumber" placeholder="Contact Mobile Number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Landline Number" class="col-lg-3 control-label">{{ 'CONLNDNO' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtLandlineNumber" name="txtLandlineNumber" ng-model="frmData[0].LandlineNumber" placeholder="Contact Landline Number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Residential Address Number" class="col-lg-3 control-label">{{ 'CONRESADR' | translate }}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="txtResidentAddress" name="txtResidentAddress" rows="5" cols="40" ng-model="frmData[0].ResidentAddress" placeholder="Contact Resident Address"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Relationship" class="col-lg-3 control-label">{{ 'CONREL' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtRelationship" name="txtRelationship" ng-model="frmData[0].Relationship" placeholder="Relationship With this Profile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Time to Call" class="col-lg-3 control-label">{{ 'CONTMETOCALL' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtTimeToCall" name="txtTimeToCall" ng-model="frmData[0].TimeToCall" placeholder="Convinient time to call">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{ 'GENSAVE' | translate }}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'CONHELP' | translate }}</p>
+    </blockquote>
+</div>
+
+
+

@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8">
+    <div class="panel panel-primary bs-example well bs-component FormShadow">
+        <div class="panel-heading">
+            <h3 class="panel-title" >
+                <center>{{ 'CRIRF'| translate }}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="Education" class="col-lg-3 control-label">{{ 'CREDUC'| translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtEducation" name="txtEducation" ng-model="frmData[0].Education" placeholder="Education of this profile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Education in Detail" class="col-lg-3 control-label">{{ 'CREDUCDT'| translate }}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="txtEducationInDetail" name="txtEducationInDetail" rows="5" cols="40" ng-model="frmData[0].EducationInDetail" placeholder="Education of this profile in detail"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Employed In" class="col-lg-3 control-label">{{ 'CREMPIN'| translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlEmployedIn" ng-model="frmData[0].EmployedIn">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="EmployedIn in arrEmployedIn">{{EmployedIn}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Occupation" class="col-lg-3 control-label">{{ 'CROCCPTN'| translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" ng-model="frmData[0].Occupation" placeholder="Occupation of this profile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Occupation in Detail" class="col-lg-3 control-label">{{ 'CROCCPTNDTL'| translate }}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="txtOccupationInDetail" name="txtOccupationInDetail" rows="5" cols="40" ng-model="frmData[0].OccupationInDetail" placeholder="Occupation of this profile in detail"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Annual Income" class="col-lg-3 control-label">{{ 'CRANINC'| translate }}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="number" id="txtAnnualIncome" name="txtAnnualIncome" ng-model="frmData[0].AnnualIncome">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{ 'GENSAVE'| translate }}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{ 'CRHELP'| translate }}</p>
+    </blockquote>
+</div>
+
+
+

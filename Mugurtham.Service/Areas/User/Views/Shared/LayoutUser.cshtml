@@ -1,0 +1,126 @@
+﻿@{
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+}
+@Scripts.Render("~/bundles/MugurthamValidation")
+<!--
+    THIS PAGE IS THE LAYOUT PAGE FOR THE MUGURTHAM ADMIN MODULE
+    -->
+<!-- Rending Body from child page-->
+<div ng-controller="ControllerUserChamber" data-ng-init="geUserChamberBadgeCount();">
+    <ul class="breadcrumb">
+        <li class="active" translate="">{{ 'GENHOME' | translate }} </li>
+    </ul>
+</div>
+<div class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ 'LYTUSRHOME' | translate }} </h3>
+        @RenderSection("featured", required: false)
+    </div>
+    <div class="panel-body">
+
+        
+
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="panel-group" id="accordion">
+                    
+
+                 
+                    
+                    
+                        <div class="panel panel-primary FormShadow">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle">
+                                    Search
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="#ProfileID">{{ 'LYTSRCH' | translate }}  &nbsp;&nbsp;<i class="fa fa-cog fa-spin" style="font-size:24px"></i> &nbsp;&nbsp;</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span id="badgeInterestedInMeProfiles" class="badge">0</span>
+                                        <a href="#InterestedProfiles">{{ 'LYTSHRTLISPROFILES' | translate }}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span id="badgeInterestedProfiles" class="badge">0</span>
+                                        <a href="#InterestedInMeProfiles">{{ 'LYTPROFILESLKDME' | translate }}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span id="badgeViewNotifications" class="badge">0</span>
+                                        <a href="#ViewNotifications">{{ 'LYTPROFILESVWDME' | translate }}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span id="badgeRecentlyJoined" class="badge">0</span>
+                                        <a href="#RecentlyJoined">{{ 'LYTRCNTLYJNDPROFILES' | translate }}</a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <span id="badgeHighlightedProfiles" class="badge">0</span>
+                                        <a href="#ProfileUserDashboard">{{'LYTPROFILESHGLTD' | translate}}</a>
+                                    </li>                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-primary FormShadow">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle">
+                                    My Profile
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="#BasicInfo/@objLoggedIn.LoginID">{{ 'LYTEDITMYPROFILE' | translate }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-primary FormShadow">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle">
+                                    Settings
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="list-group ">
+                                    <li class="list-group-item">
+                                        <a href="#UserSettingsForm">{{ 'LYTSETTINGS' | translate }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+               
+              
+            </div>
+            <div class="col-sm-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

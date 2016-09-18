@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Areas/SangamAdmin/Views/Shared/LayoutSangamAdmin.cshtml";
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+}
+
+<div id="divContainer">
+    <p class="lead">Profiles List</p>
+    <hr />
+    <div class="col-lg-12" data-ng-init="getAllProfilesBySangam();">
+        <ul class="breadcrumb">
+            <li >Home</li>
+            <li class="active">List</li>
+        </ul>
+    </div>
+    
+    <div class="col-lg-12">
+        <table>
+            <tr>
+                <td>
+                <td>&nbsp;Sangam Profile ID &nbsp;</td>
+                <td>
+                    <input type="text" class="form-control" ng-model="frmData[0].SangamProfiledID" placeholder="Sangam ProfileID">
+                </td>
+                <td>&nbsp;Mugurtham Profile ID &nbsp;</td>
+                <td>
+                    <input type="text" class="form-control" ng-model="frmData[0].MugurthamProfileID" placeholder="Mugurtham ProfileID">
+                </td>
+                <td>
+                    <label for="Marital Status" class="col-lg-3 control-label">Gender</label>
+                    <div class="col-lg-9">
+                        <select class="form-control" id="ddlGender" ng-model="frmData[0].Gender">
+                            <option value="">--Select--</option>
+                            <option value="groom">groom</option>
+                            <option value="bride">bride</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-lg-12">
+        <br />
+    </div>
+    <table class="mugurthamTable table-striped table-bordered table-hover FormShadow">
+        <thead>
+            <tr>
+                <th>Sangam Profile ID</th>
+                <th>Mugurtham Profile ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody class="example-animate-container">
+            <tr class="animate-repeat" ng-repeat="data in AllProfiles.ProfileBasicInfoViewCoreEntityList | filter: {SangamID: '@objLoggedIn.sangamID', MugurthamProfileID: frmData[0].MugurthamProfileID, SangamProfileID: frmData[0].SangamProfiledID,Gender: frmData[0].Gender} | orderBy:'MugurthamProfileID'">
+
+                <td><a ng-click="setProfileIDBySangamAdminForProfilePic(data.MugurthamProfileID);" href="#/BasicInfo/{{data.MugurthamProfileID }}">{{data.SangamProfileID }}</a></td>
+                <td><a ng-click="setProfileIDBySangamAdminForProfilePic(data.MugurthamProfileID);" href="#/BasicInfo/{{data.MugurthamProfileID }}">{{data.MugurthamProfileID }}</a></td>
+                <td>{{data.Name }}</td>
+                <td>{{data.Age }}</td>
+                <td>{{data.Gender }}</td>
+
+            </tr>
+        </tbody>        
+    </table>
+    
+</div>
+
+
+
+

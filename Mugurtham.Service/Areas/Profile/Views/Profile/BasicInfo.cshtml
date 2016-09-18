@@ -1,0 +1,288 @@
+﻿@{
+    ViewBag.Title = "Family";
+    Layout = "~/Areas/Profile/Views/Shared/layoutProfile.cshtml";
+}
+<div class="col-lg-8 " >
+    <div class="FormShadow panel panel-primary bs-example well bs-component " >
+        <div class="panel-heading" >
+            <h3 class="panel-title" >
+                <center>{{'BIBINFREGFRM'  | translate}}</center>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="SangamUserID" class="col-lg-3 control-label">{{'BISANGAMUSERID'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtProfileSangamUserID" name="txtProfileSangamUserID" ng-model="frmData[0].SangamProfileID">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Name" class="col-lg-3 control-label">{{'BINAME'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="hidden" ng-model="frmData[0].ProfileCreatedDate" id="txtProfileName" name="txtProfileName" placeholder="Profile Name" required="">
+                                <input class="form-control" type="text" ng-model="frmData[0].Name" id="txtProfileName" name="txtProfileName" placeholder="Profile Name" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Age" class="col-lg-3 control-label">{{'BIAGE'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="number" ng-model="frmData[0].Age" id="txtProfileAge" name="txtProfileAge" placeholder="Profile Age">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">{{'BIGEN'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="radProfileGender" id="radProfileMale" value="male" class="radProfileGender" />{{'GENMALE'  | translate}}</label>
+                                    <label>
+                                        <input type="radio" name="radProfileGender" id="radProfileFeMale" value="female" class="radProfileGender" />{{'GENFEMALE'  | translate}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Date of Birth" class="col-lg-3 control-label">{{'BIDOB'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" ng-model="frmData[0].DOB" type="text" id="dtDOB" name="dtDOB">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Tinme of Birth" class="col-lg-3 control-label">{{'BITOB'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" ng-model="frmData[0].TOB" type="time" id="txtTimeOfBirth" name="txtTimeOfBirth">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Marital Status" class="col-lg-3 control-label">{{'BIMARSTATUS'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlMaritalStatus" ng-model="frmData[0].MaritalStatus">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="MaritalStatus in arrMaritalStatus">{{MaritalStatus}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="No Of Children" class="col-lg-3 control-label">{{'BINOOFCHIL'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="number" id="txtNoOfChildren" name="txtNoOfChildren" ng-model="frmData[0].NoOfChildren" placeholder="No Of Children">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Children Living Status" class="col-lg-3 control-label">{{'BICHILLVNGST'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlChildrenLivingStatus" ng-model="frmData[0].ChildrenLivingStatus">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="ChildrenLivingStatus in arrChildrenLivingStatus">{{ChildrenLivingStatus}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Height" class="col-lg-3 control-label">{{'BIHEIGHT'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlHeight" ng-model="frmData[0].Height">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="height in arrHeight">{{height}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Weight" class="col-lg-3 control-label">{{'BIWEIGHT'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="number" id="txtWeight" name="txtWeight" ng-model="frmData[0].Weight">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Body Type" class="col-lg-3 control-label">{{'BIBDYTPE'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlBodyType" ng-model="frmData[0].BodyType">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="BodyType in arrBodyType">{{BodyType}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Complexion" class="col-lg-3 control-label">{{'BICOMPLEXION'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlComplexion" ng-model="frmData[0].Complexion">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Complexion in arrComplexion">{{Complexion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Physical Status" class="col-lg-3 control-label">{{'BIPHYSTA'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlPhysicalStatus" ng-model="frmData[0].PhysicalStatus">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="PhysicalStatus in arrPhysicalStatus">{{PhysicalStatus}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Blood Group" class="col-lg-3 control-label">{{'BIBLGRP'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlBloodGroup" ng-model="frmData[0].BloodGroup">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="BlodGroup in arrBlodGroup">{{BlodGroup}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Mother Tongue" class="col-lg-3 control-label">{{'BIMOTONG'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlMotherTongue" ng-model="frmData[0].MotherTongue">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="MotherToungue in arrMotherToungue">{{MotherToungue}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Profile Created By" class="col-lg-3 control-label">{{'BIPROFCRBY'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlProfileCreatedBy" ng-model="frmData[0].ProfileCreatedBy">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="ProfileCreatedBy in arrProfileCreatedBy">{{ProfileCreatedBy}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Religion" class="col-lg-3 control-label">{{'BIRLGN'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlReligion" ng-model="frmData[0].Religion">
+                                    <option value="0">--Select--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Caste" class="col-lg-3 control-label">{{'BICST'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlCaste" ng-model="frmData[0].Caste">
+                                    <option value="0">--Select--</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Sub Caste" class="col-lg-3 control-label">{{'BISUBCST'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlSubCaste" ng-model="frmData[0].SubCaste">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrSubCaste in arrSubCaste" value="{{arrSubCaste}}">{{arrSubCaste}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Gothra(m)" class="col-lg-3 control-label">{{'BIGOTHRM'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="txtProfileGothram" name="txtProfileGothram" ng-model="frmData[0].Gothram">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Star" class="col-lg-3 control-label">{{'BISTR'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlStar" ng-model="frmData[0].Star">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrStar in arrStar" value="{{arrStar}}">{{arrStar}}</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Raasi" class="col-lg-3 control-label">{{'BIRAASI'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlRaasi" ng-model="frmData[0].Raasi">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Raasi in arrRaasi">{{Raasi}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Horoscope Match" class="col-lg-3 control-label">{{'BIHORMTCH'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlAnyDhosham" ng-model="frmData[0].AnyDhosham">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="HoroscopeMatch in arrHoroscopeMatch">{{HoroscopeMatch}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Any Dhosham" class="col-lg-3 control-label">{{'BIANYDHSM'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlHoroscopeMatch" ng-model="frmData[0].HoroscopeMatch">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Dhosham in arrDhosham">{{Dhosham}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Eating" class="col-lg-3 control-label">{{'BIETNG'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlEating" ng-model="frmData[0].Eating">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Eating in arrEating">{{Eating}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Smoking" class="col-lg-3 control-label">{{'BISMKNG'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlSmoking" ng-model="frmData[0].Smoking">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Smoking in arrSmoking">{{Smoking}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="Drinking" class="col-lg-3 control-label">{{'BIDRNKNG'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlDrinking" ng-model="frmData[0].Drinking">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="Drinking in arrDrinking">{{Drinking}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <label for="About Me" class="col-lg-3 control-label">{{'BIABTME'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="txtAboutMe" name="txtAboutMe" rows="5" cols="40" placeholder="Some words about this profile" ng-model="frmData[0].AboutMe"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Partner Expectation" class="col-lg-3 control-label">{{'BIPRTNTEXPTN'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" id="txtPartnerExpectation" ng-model="frmData[0].PartnerExpectation" name="txtPartnerExpectation" rows="5" cols="40" placeholder="Some words about this profile how the expectation about the counterpart"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-10">
+                                <input type="hidden" ng-model="frmData[0].PhotoPath" />
+                                <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">{{'GENSAVE'  | translate}}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4">
+    <blockquote>
+        <p>{{'BIHELP'  | translate}}</p>
+    </blockquote>
+</div>
+
+
+

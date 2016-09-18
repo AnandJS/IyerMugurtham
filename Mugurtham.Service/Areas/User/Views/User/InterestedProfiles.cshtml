@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "InterestedProfiles";
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+}
+<p class="lead">{{ 'LYTSHRTLISPROFILES' | translate }}</p>
+<hr />
+<div class="col-lg-12" data-ng-init="getInterestedProfiles();">
+    <ul class="breadcrumb">
+        <li><a href="#ProfileUserDashboard">{{ 'GENHOME' | translate }}</a></li>
+        <li class="active">{{ 'LYTSHRTLISPROFILES' | translate }}</li>
+    </ul>
+</div>
+<div id="divProfilesILiked">
+    <div class="col-lg-12">
+        <!-- Filter Header-->
+        <div class="row">
+            <div class="col-xs-6">
+                <label for="search">Open Search:</label>
+                <input ng-model="q" id="opensearch" class="form-control" placeholder="Search using Profile ID or Name or Location or Education or more" oninput="setTimeout(displayThumbnailSlider, 1000);">
+            </div>
+            <div class="col-xs-6">
+                <label for="search">Profiles per page:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div><br /><br /><br /><br />
+            <div class="col-xs-4">
+                <h5><b>Total Searched Profiles : {{ SearchedProfiles.length }} &nbsp;&nbsp;</b></h5>
+            </div>
+            <div class="col-xs-4">
+                <h5>
+                    <b>
+                        Total Filtered Profiles : {{ (SearchedProfiles |filter: (q)).length}}
+                    </b>
+                </h5>
+            </div>
+            <div class="col-xs-4">
+
+                <h5>
+                    <b>
+                        Showing Profiles {{ (((currentPage * pageSize) - pageSize) + 1)  }}  through {{ currentPage * pageSize }} of  {{ (SearchedProfiles |filter: (q || {SangamID :SangamID, Star: Star, SubCaste: SubCaste}  || {Age: '7'} || {Age: '6'})).length}} &nbsp;&nbsp;
+                    </b>
+                </h5>
+            </div>
+        </div>
+        <!-- Top Pagination-->
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="/Scripts/Mugurtham.JS/Paging/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+        <br />
+        <!-- Profiles Listing-->
+        <div class="panel panel-primary FormShadow" dir-paginate="data in AllProfiles.ProfileBasicInfoViewCoreEntityList | filter: (q)  |  itemsPerPage: pageSize" current-page="currentPage">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">
+                    {{data.Name }}
+                </h3>
+            </div>
+            <div class="panel-body bgImage">
+                <table class="mugurthamTable">
+                    <tr>
+                        <td width="25%" class="FormShadow">
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li ng-repeat="objProfilePhoto in AllProfiles.PhotoCoreEntityList | filter: {ProfileID: data.MugurthamProfileID}">
+                                        <img src="{{objProfilePhoto.PhotoPath }}" class="img-thumbnail" style="height:200px; width:350px" />
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td width="75%" valign="top">
+                            <table class="mugurthamTable table-striped table-bordered table-hover FormShadow ">
+                                <tr>
+                                    <td class="col-lg-3">{{ 'GENPROFID' | translate}}</td>
+                                    <td class="col-lg-9"><a href="#/FullView/{{data.MugurthamProfileID}}" target="_blank">{{data.MugurthamProfileID }}</a></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ 'BIAGE' | translate}}</td>
+                                    <td>{{data.Age }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ 'BIGEN' | translate}}</td>
+                                    <td>{{data.Gender }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ 'LYTPRFTABLOC' | translate}}</td>
+                                    <td>{{data.CountryLivingIn }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ 'CREDUC' | translate}}</td>
+                                    <td>{{data.Education }}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{ 'CROCCPTN' | translate}}</td>
+                                    <td>{{data.Occupation }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" colspan="2" class="text-justify">
+                            <br />
+                            {{data.AboutMe }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="panel-footer">© {{'GENCOPYRT' | translate }} 2013 - {{data.SangamName }}</div>
+        </div>
+        <!-- Bottom Pagination-->
+        <div class="text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="/Scripts/Mugurtham.JS/Paging/dirPagination.tpl.html"></dir-pagination-controls>
+        </div>
+    </div>
+</div>

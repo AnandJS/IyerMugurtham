@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/SangamAdmin/Views/Shared/LayoutSangamAdmin.cshtml";
+}
+
+<div class="col-sm-12" data-ng-init="getChartData();">
+    <h3>Sangam Admin Dashboard</h3>
+    <hr />
+</div>
+ 
+
+
+<h3>This year sales by Month</h3>
+<div class="col-lg-12">
+        <div class="col-lg-9" id="divPieSales" style="height: 300px; width: 400px;"></div>
+    <div class="col-lg-3" id="divBarReport" style="height: 300px; width: 350px;"></div>
+</div>
+<div class="col-lg-12">
+    <div class="col-lg-3" id="divStackStar" style="height: 300px; width: 750px;"></div>
+</div>
+

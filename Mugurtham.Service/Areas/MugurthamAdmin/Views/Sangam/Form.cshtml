@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Areas/MugurthamAdmin/Views/Shared/LayoutMugurthamAdmin.cshtml";
+}
+<p class="lead">Sangam Form</p>
+<hr />
+<div class="col-lg-12" data-ng-init="getSangamByID();">
+    <ul class="breadcrumb">
+        <li><a href="#SangamList">List</a></li>
+        <li class="active">Form</li>
+    </ul>
+    <div class="col-lg-8">
+        <div class="panel panel-primary bs-example well bs-component FormShadow">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Sangam Registration Form
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="SangamName" class="col-lg-3 control-label">Sangam Name</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtNomineeName" name="txtNomineeName" ng-model="frmData[0].Name" placeholder="Name of the Sangam">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Address" class="col-lg-3 control-label">Address</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" id="txtAddress" name="txtAddress" ng-model="frmData[0].Address" placeholder="Address of the sangam"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ContactNumber" class="col-lg-3 control-label">Contact Number</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtContactNumber" name="txtContactNumber" ng-model="frmData[0].ContactNumber" placeholder="Contact Number">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Precedence" class="col-lg-3 control-label">Profile Precedence</label>
+                                <div class="col-lg-9">
+                                    <input type="text" class="form-control" id="txtPrecedence" name="txtPrecedence" ng-model="frmData[0].ProfileIDStartsWith" placeholder="ProfileID Starts With">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Address" class="col-lg-3 control-label">About Sangam</label>
+                                <div class="col-lg-9">
+                                    <textarea class="form-control" id="txtAboutSangam" name="txtAboutSangam" ng-model="frmData[0].AboutSangam" placeholder="Describe about this Sangam"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="IsActivated" class="col-lg-3 control-label">IsActivated</label>
+                                <div class="checkbox col-lg-9">
+                                    <input class="sangamActivationCheckbox" value="1" type="checkbox" id="chkIsActivated" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Precedence" class="col-lg-3 control-label">Logo Path</label>
+                                <div class="col-lg-9">
+                                    <input disabled="disabled" type="text" class="form-control" ng-model="frmData[0].LogoPath" placeholder="Sangam Logo Path">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Precedence" class="col-lg-3 control-label">Banner Path</label>
+                                <div class="col-lg-9">
+                                    <input disabled="disabled" type="text" class="form-control" ng-model="frmData[0].BannerPath" placeholder="Sangam Banner Path">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-10">
+                                    <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveFormData();">Save</button>
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <blockquote>
+            <p>This form is used to collect infomration about the Sangam / Association where the profiles are mapped to</p>
+        </blockquote>
+    </div>
+
+
+
+
+</div>

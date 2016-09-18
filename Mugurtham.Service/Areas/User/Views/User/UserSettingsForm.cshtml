@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "UserSettingsForm";
+    Layout = "~/Areas/User/Views/Shared/LayoutUser.cshtml";
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+    
+}
+<p class="lead">User Settings</p>
+<div class="col-lg-12" data-ng-init="getUserSettingsByID('@objLoggedIn.ID');">
+    <ul class="breadcrumb">
+        <li class="active">Form</li>
+    </ul>
+    <div class="col-lg-8">
+        <div class="panel panel-primary bs-example well bs-component FormShadow">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">User Settings Form
+                </h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="Password" class="col-lg-3 control-label">New Password</label>
+                                <div class="col-lg-9">
+                                    <input type="password" class="form-control" id="txtPassword" name="txtPassword" ng-model="userFormData[0].Password" placeholder="Change your Password here" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Style" class="col-lg-3 control-label">Style</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control" ng-model="userFormData[0].ThemeID" id="ddlTheme">
+                                        <option value="Bootstrap">Bootstrap</option>
+                                        <option value="Cerulean">Cerulean</option>
+                                        <option value="Cyborg">Cyborg</option>
+                                        <option value="Darkly">Darkly</option>
+                                        <option value="Flatly">Flatly</option>
+                                        <option value="Lumen">Lumen</option>
+                                        <option value="Paper">Paper</option>
+                                        <option value="Readable">Readable</option>
+                                        <option value="Simplex">Simplex</option>
+                                        <option value="Slate">Slate</option>
+                                        <option value="Spacelab">Spacelab</option>
+                                        <option value="Superhero">Superhero</option>
+                                        <option value="United">United</option>
+                                        <option value="Yeti">Yeti</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Locale" class="col-lg-3 control-label">Language</label>
+                                <div class="col-lg-9">
+                                    <select class="form-control"  ng-model="userFormData[0].LocaleID" id="ddlUserLocale">
+                                        <option value="0409">English</option>
+                                        <option value="0449">Tamil</option>
+                                        <option value="0439">Hindi</option>
+                                        <option value="044a">Telgu</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <input type="hidden" class="form-control" ng-model="userFormData[0].IsHighlighted">
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-10">
+                                    <button id="btnSave" name="btnSave" class="btn btn-primary" ng-click="saveUserSettings('@objLoggedIn.Name','@objLoggedIn.ID','@objLoggedIn.LoginID','@objLoggedIn.sangamID','@objLoggedIn.roleID');">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <blockquote>
+            <p>This form is used to collect infomration about the User where the profiles are mapped to</p>
+        </blockquote>
+    </div>
+
+
+
+
+</div>
+

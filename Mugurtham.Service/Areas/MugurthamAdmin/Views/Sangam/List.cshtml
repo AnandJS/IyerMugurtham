@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "SangamList";
+    Layout = "~/Areas/MugurthamAdmin/Views/Shared/LayoutMugurthamAdmin.cshtml";
+}
+<p class="lead">Sangam List</p>
+<hr />
+<div class="col-lg-12" data-ng-init="getAllSangams();">
+    <ul class="breadcrumb">
+        <li class="active">List</li>
+    </ul>
+    <button id="btnSave" name="btnSave" class="btn btn-primary" onclick="javascript:window.location='#SangamForm';">Add Sangam</button>
+</div>
+<div class="col-lg-12">
+    <br />
+</div>
+    <table class="mugurthamTable table-striped table-bordered table-hover FormShadow">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Contact Number</th>
+                <th>Profile ID Starts With</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="Sangam in AllSangams">
+                <td><a href="#SangamForm/{{Sangam.ID}}">{{Sangam.Name}}</a></td>
+                <td>{{Sangam.ContactNumber}}</td>
+                <td>{{Sangam.ProfileIDStartsWith}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+

@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "App_Themes/MugurthamTheme/css/Mugurtham/Mugurtham.css",
+    "inputFiles": [
+      "App_Themes/MugurthamTheme/css/Mugurtham/Mugurtham.css"
+    ]
+  },
+  {
+    "outputFileName": "App_Themes/MugurthamTheme/css/Social/one-page-wonder.css",
+    "inputFiles": [
+      "App_Themes/MugurthamTheme/css/Social/one-page-wonder.css"
+    ]
+  }
+]

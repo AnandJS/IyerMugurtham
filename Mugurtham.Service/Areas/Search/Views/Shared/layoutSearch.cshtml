@@ -1,0 +1,26 @@
+﻿@{
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+    Scripts.Render("~/bundles/MugurthamValidation")}
+<!--
+    THIS PAGE IS THE LAYOUT PAGE FOR THE SEARCH MODULE
+    -->
+<!-- Rending Body from child page-->
+<div><h3 translate=""></h3>
+    <ul class="breadcrumb">
+        <li><a href="@objLoggedIn.HomePagePath" translate="">{{ 'GENHOME' | translate}}</a></li>
+        <li class="active">{{ 'LYTSRCH' | translate}}</li>
+    </ul>
+</div>
+<div class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ 'LYTSRCPROFSRC' | translate}}</h3>
+        @RenderSection("featured", required: false)
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@{
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+}
+<!--
+    THIS PAGE IS THE LAYOUT PAGE FOR THE PROFILE REGISTRATION MODULE
+    -->
+<!-- Rending Body from child page-->
+<div>
+    <ul class="breadcrumb" >
+        <li><a href="@objLoggedIn.HomePagePath" translate="">{{ 'GENHOME' | translate }}</a></li>
+        <li><a href="#ProfileID">{{ 'GENSRCH' | translate }}</a></li>
+        <li><a href="#FullView/{{globalProfileID}}">{{ 'GENVIEW' | translate }}</a></li>
+        <li class="active">{{ 'GENPROF' | translate }}</li>
+    </ul>
+</div>
+<div class="panel panel-primary bs-example FormShadow">
+    <div class="panel-heading" >
+        <h3 class="panel-title" >{{ 'LYTPRFREGFOR' | translate}} {{globalProfileID}}</h3>
+        @RenderSection("featured", required: false)
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- Tabs-->
+                <div>
+                    <ul id="navBarProfile" class="nav nav-tabs">
+                        <li class="active"><a href="#BasicInfo" ng-click="setActiveTab('tabBasicInfo');" id="tabBasicInfo"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABBI' | translate }}</a></li>
+                        <li class=""><a href="#Career" ng-click="setActiveTab('tabCareer');" id="tabCareer"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABCAR' | translate }}</a></li>
+                        <li class=""><a href="#Contact" ng-click="setActiveTab('tabContact');" id="tabContact"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABCONT' | translate }}</a></li>
+                        <li class=""><a href="#Family" ng-click="setActiveTab('tabFamily');" id="tabFamily"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABFAM' | translate }}</a></li>
+                        <li class=""><a href="#Location" ng-click="setActiveTab('tabLocation');" id="tabLocation"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABLOC' | translate }}</a></li>
+                        <li class=""><a href="#Reference" ng-click="setActiveTab('tabReference');" id="tabReference"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABREF' | translate }}</a></li>
+                        <li class=""><a href="#Horoscope" ng-click="setActiveTab('tabHoroscope');" id="tabHoroscope"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABHORO' | translate }}</a></li>
+                        <li class=""><a href="#Photo" ng-click="setActiveTab('tabPhoto');" id="tabPhoto"><span class="glyphicon glyphicon-home"></span>{{ 'LYTPRFTABPHO' | translate }}</a></li>
+                        <!-- <li  class=""><a href="#Album" ng-click="setActiveTab('tabAlbum');" id="tabAlbum"><span class="glyphicon glyphicon-home"></span>Album</a></li>-->
+                    </ul>
+                </div>
+                <br />
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+</div>

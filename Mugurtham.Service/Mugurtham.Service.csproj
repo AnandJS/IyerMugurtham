@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61365339-1BE1-4578-82CB-D7F3F06810BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mugurtham.Service</RootNamespace>
+    <AssemblyName>Mugurtham.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Utility\Utility.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\API\LookupAPIController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\API\RoleAPIController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\API\SangamAPIController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\API\UserAPIController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\MVC\MugurthamAdminController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\MVC\RoleController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\MVC\SangamController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\Controllers\MVC\UserController.cs" />
+    <Compile Include="Areas\MugurthamAdmin\MugurthamAdminAreaRegistration.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\BasicInfoAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\CareerAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\ContactAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\FamilyAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\HoroscopeAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\LocationAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\ProfileAPIController.cs" />
+    <Compile Include="Areas\Profile\Controllers\MVC\ProfileController.cs" />
+    <Compile Include="Areas\Profile\Controllers\API\ReferenceAPIController.cs" />
+    <Compile Include="Areas\Profile\ProfileAreaRegistration.cs" />
+    <Compile Include="Areas\SangamAdmin\Controllers\MVC\SangamAdminController.cs" />
+    <Compile Include="Areas\SangamAdmin\Controllers\MVC\SangamUserController.cs" />
+    <Compile Include="Areas\SangamAdmin\SangamAdminAreaRegistration.cs" />
+    <Compile Include="Areas\Search\Controllers\API\AllProfilesAPIController.cs" />
+    <Compile Include="Areas\Search\Controllers\MVC\SearchController.cs" />
+    <Compile Include="Areas\Search\SearchAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\API\ProfileViewedAPIController.cs" />
+    <Compile Include="Areas\User\Controllers\MVC\UserController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Areas\View\Controllers\API\ProfileViewAPIController.cs" />
+    <Compile Include="Areas\View\Controllers\MVC\FullViewController.cs" />
+    <Compile Include="Areas\View\ViewAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginUserAPIController.cs" />
+    <Compile Include="Controllers\MugurthamAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\MugurthamController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\SQLServer\uspGetAllProfiles.sql" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\css\font-awesome.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\css\font-awesome.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\formbg.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Cerulean.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Cosmo.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Cyborg.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Darkly.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Flatly.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Journal.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Lumen.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Paper.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Readable.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Sandstone.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Simplex.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Slate.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Spacelab.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Superhero.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-United.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap-Yeti.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Bootstrap\bootstrap.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\DropZone\DropZone.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Flexslider\close.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Flexslider\flexslider.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Flexslider\loading.gif" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Flexslider\next.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Flexslider\prev.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\formbg.gif" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\a03.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\b03.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\close.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\loading.gif" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\next.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Images\prev.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Jquery\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Jqplot\examples.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Jqplot\jquery.jqplot.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Jquery\jquery-ui.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Lightbox\close.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Lightbox\lightbox.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Lightbox\loading.gif" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Lightbox\next.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Lightbox\prev.png" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Login\MugurthamLogin.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Mask\jquery.loadmask.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Mask\loading.gif" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Mugurtham.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Mugurtham.min.css">
+      <DependentUpon>Mugurtham.css</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Toastr\toaster.min.css" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\Toastr\toastr.min.css" />
+    <Content Include="Areas\HomePage\asset\css\bootstrap.min.css" />
+    <Content Include="Areas\HomePage\asset\js\bootstrap.min.js" />
+    <Content Include="Areas\HomePage\css\animate.css" />
+    <Content Include="Areas\HomePage\css\colors\cyan.css" />
+    <Content Include="Areas\HomePage\css\font-awesome.min.css" />
+    <Content Include="Areas\HomePage\css\responsive.css" />
+    <Content Include="Areas\HomePage\css\slicknav.css" />
+    <Content Include="Areas\HomePage\css\style.css" />
+    <Content Include="Areas\HomePage\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\HomePage\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\HomePage\images\about-01.jpg" />
+    <Content Include="Areas\HomePage\images\about-02.jpg" />
+    <Content Include="Areas\HomePage\images\about-03.jpg" />
+    <Content Include="Areas\HomePage\images\author.png" />
+    <Content Include="Areas\HomePage\images\avatar.png" />
+    <Content Include="Areas\HomePage\images\blog-05.jpg" />
+    <Content Include="Areas\HomePage\images\catering.jpg" />
+    <Content Include="Areas\HomePage\images\event.png" />
+    <Content Include="Areas\HomePage\images\kalpana.JPG" />
+    <Content Include="Areas\HomePage\images\logo\logo-mugurtha - Copy.jpg" />
+    <Content Include="Areas\HomePage\images\logo\logo-mugurtha.jpg" />
+    <Content Include="Areas\HomePage\images\logo\logo-mugurtha.png" />
+    <Content Include="Areas\HomePage\images\logo\Untitled-2.png" />
+    <Content Include="Areas\HomePage\images\makeup.jpg" />
+    <Content Include="Areas\HomePage\images\panjasakthi.png" />
+    <Content Include="Areas\HomePage\images\patterns\6.png" />
+    <Content Include="Areas\HomePage\images\photography.jpg" />
+    <Content Include="Areas\HomePage\images\slide-01-bg.jpg" />
+    <Content Include="Areas\HomePage\images\slide-03-bg.jpg" />
+    <Content Include="Areas\HomePage\images\slider\meenakchiSundaraeswarar.jpg" />
+    <Content Include="Areas\HomePage\images\slider\mugurtham_02.jpg" />
+    <Content Include="Areas\HomePage\images\slider\mugurtham_14.png" />
+    <Content Include="Areas\HomePage\images\stage-decor.jpg" />
+    <Content Include="Areas\HomePage\images\test-1.jpg" />
+    <Content Include="Areas\HomePage\images\test-2.jpg" />
+    <Content Include="Areas\HomePage\images\testimonials-bg.jpg" />
+    <Content Include="Areas\HomePage\images\title.JPG" />
+    <Content Include="Areas\HomePage\images\viswajothi.JPG" />
+    <Content Include="Areas\HomePage\images\viswamalar.JPG" />
+    <Content Include="Areas\HomePage\index.html" />
+    <Content Include="Areas\HomePage\js\contact.js" />
+    <Content Include="Areas\HomePage\js\count-to.js" />
+    <Content Include="Areas\HomePage\js\jquery-2.1.4.min.js" />
+    <Content Include="Areas\HomePage\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Areas\HomePage\js\jquery.appear.js" />
+    <Content Include="Areas\HomePage\js\jquery.easypiechart.js" />
+    <Content Include="Areas\HomePage\js\jquery.easypiechart.min.js" />
+    <Content Include="Areas\HomePage\js\jquery.fitvids.js" />
+    <Content Include="Areas\HomePage\js\jquery.isotope.js" />
+    <Content Include="Areas\HomePage\js\jquery.isotope.min.js" />
+    <Content Include="Areas\HomePage\js\jquery.lettering.js" />
+    <Content Include="Areas\HomePage\js\jquery.migrate.js" />
+    <Content Include="Areas\HomePage\js\jquery.nicescroll.js" />
+    <Content Include="Areas\HomePage\js\jquery.nicescroll.min.js" />
+    <Content Include="Areas\HomePage\js\jquery.parallax.js" />
+    <Content Include="Areas\HomePage\js\jquery.slicknav.js" />
+    <Content Include="Areas\HomePage\js\jquery.textillate.js" />
+    <Content Include="Areas\HomePage\js\mediaelement-and-player.js" />
+    <Content Include="Areas\HomePage\js\modernizrr.js" />
+    <Content Include="Areas\HomePage\js\nivo-lightbox.js" />
+    <Content Include="Areas\HomePage\js\nivo-lightbox.min.js" />
+    <Content Include="Areas\HomePage\js\owl.carousel.js" />
+    <Content Include="Areas\HomePage\js\owl.carousel.min.js" />
+    <Content Include="Areas\HomePage\js\script.js" />
+    <Content Include="Areas\Profile\Images\ProfilePhoto\Default.txt" />
+    <Content Include="Areas\Search\Sivan.jpg" />
+    <Content Include="Build.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="App_Themes\MugurthamTheme\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\MugurthamTheme\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\MugurthamTheme\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\MugurthamTheme\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Profile\Views\Web.config" />
+    <Content Include="Areas\Profile\Views\Shared\layoutProfile.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\BasicInfo.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Contact.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Family.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Location.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Reference.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Horoscope.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Photo.cshtml" />
+    <Content Include="Areas\Profile\Views\Profile\Album.cshtml" />
+    <Content Include="Areas\Search\Views\Web.config" />
+    <Content Include="Areas\Search\Views\Shared\layoutSearch.cshtml" />
+    <Content Include="Areas\Search\Views\Search\ProfileID.cshtml" />
+    <Content Include="Areas\Search\Views\Search\AllProfiles.cshtml" />
+    <Content Include="Areas\Search\Views\Search\GeneralSearch.cshtml" />
+    <Content Include="Areas\Search\Views\Search\SangamSearch.cshtml" />
+    <Content Include="Images\Mugurtham\calendar.gif" />
+    <Content Include="Images\Mugurtham\Flag.jpg" />
+    <Content Include="Images\Mugurtham\General\like.png" />
+    <Content Include="Images\Mugurtham\General\View.png" />
+    <Content Include="Images\Mugurtham\Lightbox\close.png" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\favicon.png" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-1.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-2.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-3.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-4.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-5.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\image-6.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-1.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-2.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-3.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-4.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-5.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\thumb-6.jpg" />
+    <Content Include="Images\Mugurtham\Lightbox\loading.gif" />
+    <Content Include="Images\Mugurtham\Lightbox\next.png" />
+    <Content Include="Images\Mugurtham\Lightbox\prev.png" />
+    <Content Include="Images\Mugurtham\Login\7AF2Qzt.png" />
+    <Content Include="Images\Mugurtham\Login\8bcLQqF.png" />
+    <Content Include="Images\Mugurtham\Sangam\Banner\Default.html" />
+    <Content Include="Images\Mugurtham\Sangam\Default.html" />
+    <Content Include="Images\Mugurtham\Sangam\Logo\Default.html" />
+    <Content Include="Log\Default.txt" />
+    <Content Include="Scripts\Mugurtham.JS\AngularJSToastr\toaster.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\AngularJS\angular-route.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\AngularJS\angular-translate.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\AngularJS\angular.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Mugurtham.JS\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\FlexSlider\flexslider.js" />
+    <Content Include="Scripts\Mugurtham.JS\FlexSlider\flexslider.min.js">
+      <DependentUpon>flexslider.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Mugurtham.JS\Jqplot\jqplot.barRenderer.js" />
+    <Content Include="Scripts\Mugurtham.JS\Jqplot\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\Mugurtham.JS\Jqplot\jqplot.pieRenderer.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\Jqplot\jqplot.pointLabels.js" />
+    <Content Include="Scripts\Mugurtham.JS\Jqplot\jquery.jqplot.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jqprint.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jquery-ui.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jquery.loadmask.js" />
+    <Content Include="Scripts\Mugurtham.JS\JQuery\jquery.loadmask.min.js">
+      <DependentUpon>jquery.loadmask.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Mugurtham.JS\Lightbox\lightbox.js" />
+    <Content Include="Scripts\Mugurtham.JS\Lightbox\lightbox.min.js">
+      <DependentUpon>lightbox.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\app.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\ControllerMugurtham.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\ControllerMugurtham.min.js">
+      <DependentUpon>ControllerMugurtham.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Dashboard\ControllerSangamAdminProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Dashboard\ControllerSangamDashboard.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileBasicInfo.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileContact.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileCareer.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileFamily.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileHoroscope.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileLocation.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfilePhoto.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Profile\ControllerProfileReference.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\MugurthamAdmin\ControllerRole.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\MugurthamAdmin\ControllerSangam.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerHighlightedProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerInterestedInMeProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerRecentlyJoined.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Search\ControllerSearchAllProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Search\ControllerSearchGeneral.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Search\ControllerSearchProfileID.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\MugurthamAdmin\ControllerUser.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\Search\ControllerSearchSangam.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerUserChamber.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerViewedProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\UserChamber\ControllerInterestedProfiles.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Controllers\View\ControllerFullView.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Login\Login.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Utility\Helper.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Utility\SessionData.js" />
+    <Content Include="Scripts\Mugurtham.JS\Mugurtham\Utility\Validation.js" />
+    <Content Include="Scripts\Mugurtham.JS\Paging\angular-table.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\Paging\dirPagination.js" />
+    <Content Include="Scripts\Mugurtham.JS\Paging\dirPagination.tpl.html" />
+    <Content Include="Scripts\Mugurtham.JS\Slider\jssor.slider.debug.js" />
+    <Content Include="Scripts\Mugurtham.JS\Slider\jssor.slider.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\Slider\jssor.slider.mini.js" />
+    <Content Include="Scripts\Mugurtham.JS\toastr\toastr.min.js" />
+    <Content Include="Scripts\Mugurtham.JS\toastr\toastr.min.min.js">
+      <DependentUpon>toastr.min.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\login-form-paper-style.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\MugurthamLayout.cshtml" />
+    <Content Include="Views\Mugurtham\Index.cshtml" />
+    <Content Include="Views\Mugurtham\Info.cshtml" />
+    <Content Include="WebReference.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\MugurthamAdmin\Models\" />
+    <Folder Include="Areas\Profile\Models\" />
+    <Folder Include="Areas\SangamAdmin\Models\" />
+    <Folder Include="Areas\Search\Models\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Areas\View\Models\" />
+    <Folder Include="Areas\View\Views\Shared\" />
+    <Folder Include="Content\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mugurtham.Common\Mugurtham.Common.csproj">
+      <Project>{521c4a90-817a-49cc-902d-cb0f661c05e8}</Project>
+      <Name>Mugurtham.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mugurtham.Core\Mugurtham.Core.csproj">
+      <Project>{a7409288-a372-4e10-91a4-938c67623bd5}</Project>
+      <Name>Mugurtham.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Profile\Views\Profile\Career.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\View\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\View\Views\FullView\FullView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\MugurthamAdmin\Views\Web.config" />
+    <Content Include="Areas\MugurthamAdmin\Views\Shared\LayoutMugurthamAdmin.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\Dashboard.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\MugurthamAdmin\Dashboard.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\Web.config" />
+    <Content Include="Areas\SangamAdmin\Views\Shared\LayoutSangamAdmin.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamAdmin\Dashboard.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\Role\List.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\Role\Form.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\Sangam\List.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\Sangam\Form.cshtml" />
+    <Content Include="Areas\User\Views\Web.config" />
+    <Content Include="Areas\User\Views\Shared\LayoutUser.cshtml" />
+    <Content Include="Areas\User\Views\User\List.cshtml" />
+    <Content Include="Areas\User\Views\User\Form.cshtml" />
+    <Content Include="Areas\User\Views\User\Index.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\User\Index.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\User\List.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\User\Form.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamAdmin\Settings.cshtml" />
+    <Content Include="Areas\MugurthamAdmin\Views\MugurthamAdmin\Profiles.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamAdmin\SangamAdminProfiles.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamUser\Index.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamUser\List.cshtml" />
+    <Content Include="Areas\SangamAdmin\Views\SangamUser\Form.cshtml" />
+    <Content Include="Areas\User\Views\User\UserSettingsForm.cshtml" />
+    <Content Include="Areas\User\Views\User\RecentlyJoined.cshtml" />
+    <Content Include="Areas\User\Views\User\HighlightedProfiles.cshtml" />
+    <Content Include="Areas\User\Views\User\ViewedProfiles.cshtml" />
+    <Content Include="Areas\User\Views\User\InterestedProfiles.cshtml" />
+    <Content Include="Areas\User\Views\User\InterestedInMeProfiles.cshtml" />
+    <Content Include="Images\Mugurtham\Lightbox\demopage\.DS_Store" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App_Themes\MugurthamTheme\css\Mugurtham\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\HomePage\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\HomePage\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\HomePage\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\HomePage\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\HomePage\fonts\FontAwesome.otf" />
+    <Content Include="Areas\HomePage\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\HomePage\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\HomePage\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\HomePage\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="bundleconfig.json" />
+    <Content Include="Log\MugurthamLog.log" />
+    <None Include="Properties\PublishProfiles\ProfileMugurtham.pubxml" />
+    <Content Include="Views\Mugurtham\Home.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\UploadFile.cshtml" />
+    <Content Include="Views\Home\HttpError404.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Iyer.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Test.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Vishwakarma.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Vishwakarma|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Iyer|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1072/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

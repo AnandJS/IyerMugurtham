@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/SangamAdmin/Views/Shared/LayoutSangamAdmin.cshtml";
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+}
+
+<div id="divUserList">
+    <p class="lead">User List</p>
+    <hr />
+    <div class="col-lg-12" data-ng-init="getAllSangamUsers('@objLoggedIn.sangamID');">
+        <ul class="breadcrumb">
+            <li class="active">List</li>
+        </ul>
+    </div>
+    <div class="col-lg-12">
+        <table>
+            <tr>
+                <td>&nbsp;Name &nbsp;</td>
+                <td>
+                    <input type="text" class="form-control" ng-model="frmData[0].Name" placeholder="Name of the User">
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-lg-12">
+        <br />
+    </div>
+    <table class="mugurthamTable table-striped table-bordered table-hover FormShadow">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sangam</th>
+                <th>IsActivated</th>
+            </tr>
+        </thead>
+        <tbody class="example-animate-container">
+            <tr class="animate-repeat" ng-repeat="User in AllUsers | filter: {RoleID: frmData[0].RoleID, Name: frmData[0].Name} | orderBy:'Name'">
+                <td><a href="#SangamUserForm/{{User.ID}}">{{User.Name}}</a></td>
+                <td>{{User.SangamName}}</td>
+                <td>{{User.IsActivated}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

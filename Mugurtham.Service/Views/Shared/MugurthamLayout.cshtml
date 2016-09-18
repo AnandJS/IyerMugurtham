@@ -1,0 +1,341 @@
+﻿@{
+    Layout = null;
+    Mugurtham.Core.Login.LoggedInUser objLoggedIn = (Mugurtham.Core.Login.LoggedInUser)Session["LoggedInUser"];
+    string strProductVersion = System.Configuration.ConfigurationManager.AppSettings[Mugurtham.Core.Constants.AppSetttingsKeyProductVersion];
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Mugurtham - Associations Integrated</title>
+    <meta name="viewport" content="width=device-width" />
+    <link id="stylesheet" rel="stylesheet" href="@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap.min.css")" />
+    <link id="stylesheet" rel="stylesheet" href="@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Mugurtham.min.css")" />
+    <link id="stylesheet" rel="stylesheet" href="@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/font-awesome/css/font-awesome.min.css")" />
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+                -webkit-border-radius: 0 6px 6px 6px;
+                -moz-border-radius: 0 6px 6px;
+                border-radius: 0 6px 6px 6px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu > a:after {
+                display: block;
+                content: " ";
+                float: right;
+                width: 0;
+                height: 0;
+                border-color: transparent;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                border-left-color: #ccc;
+                margin-top: 5px;
+                margin-right: -10px;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                    -webkit-border-radius: 6px 0 6px 6px;
+                    -moz-border-radius: 6px 0 6px 6px;
+                    border-radius: 6px 0 6px 6px;
+                }
+    </style>
+
+    @Styles.Render("~/Content/MugurthamJQueryUI")
+    @Styles.Render("~/Content/MugurthamToastr")
+    <!--@Styles.Render("~/Content/MugurthamBase")-->
+    @Styles.Render("~/Content/MugurthamMask")
+    @Styles.Render("~/Content/MugurthamJqplot")
+    @Styles.Render("~/Content/Flexslider")
+    @Styles.Render("~/Content/Lightbox")
+    @Styles.Render("~/Content/font-awesome")
+
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+</head>
+<body>
+    <!-- Navigation -->
+
+
+    <form ng-app="MugurthamApp" name="frmPortal" novalidate>
+        <div id="body" ng-controller="MugurthamController" class="bgBodyImage" data-ng-init="changeLanguage('@objLoggedIn.localeID');">
+            <!-- Page top navigation-->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="ControllerUserChamber">
+
+                        <ul class="nav navbar-nav navbar-middle ">
+                            <li class="navbar-brand">@objLoggedIn.SangamName</li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right ">
+                            <li>
+                                <img src="@objLoggedIn.BasicInfoCoreEntity.PhotoPath" class="navbar-brand img-circle" width="70" height="5930" />
+                            </li>
+                            <li>
+                                <a id="lblName">Hii @objLoggedIn.Name  !!! &nbsp;&nbsp;</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="aSelectLang" style="cursor: pointer">
+                                    Search
+                                    <span class="caret"></span>
+                                </a>
+
+
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li><a href="/Mugurtham#/ProfileID"><i class="fa fa-user" style="font-size:24px"></i> &nbsp;&nbsp;Search By Profile ID</a></li>
+                                    <li><a href="/Mugurtham#/GeneralSearch"><i class="fa fa-search" style="font-size:24px"></i> &nbsp;&nbsp;General Search</a></li>
+                                    <li><a href="/Mugurtham#/AllProfiles"><i class="fa fa-users" style="font-size:24px"></i> &nbsp;&nbsp;Search All Profiles </a> </li>
+                                    <li><a href="/Mugurtham#/SangamSearch"><i class="fa fa-building-o" style="font-size:24px"></i> &nbsp;&nbsp;Search by Sangam  </a></li>
+                                    <li class="divider"></li>
+                                    <li> <a href="#InterestedProfiles"><i class="fa fa-hand-pointer-o" style="font-size:24px"></i> &nbsp;&nbsp;{{ 'LYTSHRTLISPROFILES' | translate }}  &nbsp;&nbsp;<i class="text-right badge" id="badgeInterestedInMeProfilesInGblNav"></i></a></li>
+                                    <li> <a href="#InterestedInMeProfiles"><i class="fa fa-users" style="font-size:24px"></i> &nbsp;&nbsp;{{ 'LYTPROFILESLKDME' | translate }}  &nbsp;&nbsp;<i class="text-right badge" id="badgeInterestedProfilesInGblNav"></i></a></li>
+                                    <li> <a href="#ViewNotifications"><i class="fa fa-users" style="font-size:24px"></i> &nbsp;&nbsp;{{ 'LYTPROFILESVWDME' | translate }}  &nbsp;&nbsp;<i class="text-right badge" id="badgeViewNotificationsInGblNav"></i></a></li>
+                                    <li> <a href="#RecentlyJoined"><i class="fa fa-users" style="font-size:24px"></i> &nbsp;&nbsp;{{ 'LYTRCNTLYJNDPROFILES' | translate }}  &nbsp;&nbsp;<i class="text-right badge" id="badgeRecentlyJoinedInGblNav"></i></a></li>
+                                    <li> <a href="#ProfileUserDashboard"><i class="fa  fa-lightbulb-o" style="font-size:24px"></i> &nbsp;&nbsp;{{ 'LYTPROFILESHGLTD' | translate }}  &nbsp;&nbsp;<i class="text-right badge" id="badgeHighlightedProfilesInGblNav"></i></a></li>
+                                   
+
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="aSelectLang" style="cursor: pointer">Settings <span class="caret"></span></a>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li>
+                                        <a href="#BasicInfo/@objLoggedIn.LoginID">
+                                            <i class="fa fa-edit" style="font-size:24px"></i> &nbsp;&nbsp;Edit My Profile
+                                        </a>
+                                    </li>
+                                    <li><a href="/Mugurtham#/UserSettingsForm"><i class="fa fa-cog fa-spin" style="font-size:24px"></i> &nbsp;&nbsp;Settings</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/Mugurtham#/UserSettingsForm"><i class="fa fa-lock" style="font-size:24px"></i> &nbsp;&nbsp;Change Password</a></li>
+                                    <li><a href="/Mugurtham#/UserSettingsForm"><i class="fa fa-user" style="font-size:24px"></i> &nbsp;&nbsp;Personalize </a></li>
+                                    <li class="divider"></li>
+
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="aSelectLang" style="cursor: pointer"><i class="fa fa-language" style="font-size:24px"></i> &nbsp;&nbsp;Switch Language </a>
+                                        <ul id="ddlLocale" class="dropdown-menu" role="menu">
+                                            <li><a id="0449" localeid="0449">Tamil</a></li>
+                                            <li class="active"><a id="0409" localeid="0409">English</a></li>
+                                            <li><a id="0439" localeid="0439">Hindi</a></li>
+                                            <li><a id="044a" localeid="044a">Telgu</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="aSelectStyle" style="cursor: pointer"><i class="fa fa-smile-o" style="font-size:24px"></i> &nbsp;&nbsp;Switch Style</a>
+                                        <ul id="ddlThemes" class="dropdown-menu" role="menu">
+                                            <li class="active"><a id="Bootstrap" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap.min.css")'>Bootstrap</a></li>
+                                            <li><a id="Cerulean" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Cerulean.min.css")'>Cerulean</a></li>
+                                            <li><a id="Cyborg" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Cyborg.min.css")'>Cyborg</a></li>
+                                            <li><a id="Darkly" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Darkly.min.css")'>Darkly</a></li>
+                                            <li><a id="Flatly" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Flatly.min.css")'>Flatly</a></li>
+                                            <li><a id="Lumen" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Lumen.min.css")'>Lumen</a></li>
+                                            <li><a id="Paper" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Paper.min.css")'>Paper</a></li>
+                                            <li><a id="Readable" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Readable.min.css")'>Readable</a></li>
+                                            <li><a id="Simplex" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Simplex.min.css")'>Simplex</a></li>
+                                            <li><a id="Slate" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Slate.min.css")'>Slate</a></li>
+                                            <li><a id="Spacelab" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Spacelab.min.css")'>Spacelab</a></li>
+                                            <li><a id="Superhero" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-United.min.css")'>Superhero</a></li>
+                                            <li><a id="United" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-United.min.css")'>United</a></li>
+                                            <li><a id="Yeti" cssurl='@Url.Content("~/App_Themes/MugurthamTheme/css/Mugurtham/Bootstrap/bootstrap-Yeti.min.css")'>Yeti</a></li>
+                                            <li class="divider"></li>
+                                        </ul>
+                                    </li>
+
+
+
+                                    <!-- Third Menu Sliding OUt
+
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Hover me for more options</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                                <a href="#">Even More..</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">3rd level</a></li>
+                                                    <li><a href="#">3rd level</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Second level</a></li>
+                                            <li><a href="#">Second level</a></li>
+                                        </ul>
+                                    </li>
+
+                                    -->
+
+                                </ul>
+                            </li>
+                            <li><a onclick="localStorage.landingFirstTimeCount=0; window.location = '/Home/Logout';" id="tabLogout" data-toggle="tab" style="cursor: pointer">Logout</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <div class="container ">
+                <!-- The big header-->
+                <div class="jumbotron">
+                    <table width="100%">
+                        <tr>
+                            <td width="10%">
+                                <img src="@objLoggedIn.SangamLogoPath" height="90px" width="100%" />
+                            </td>
+                            <td width="90%" class="text-justify" style="padding:10px">
+                                <br />@objLoggedIn.AboutSangam
+
+                                <!--    <img src="@objLoggedIn.SangamBannerPath" height="90px" width="100%" />
+                                </td>-->
+                        </tr>
+                    </table>
+                    </table>
+                </div>
+                <!--
+                <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications.">
+                    <tr>
+                        <td width="135" align="center" valign="top">
+                            <script type="text/javascript" src="https://seal.websecurity.norton.com/getseal?host_name=vishwakarma.mugurtham.com&amp;size=L&amp;use_flash=NO&amp;use_transparent=YES&amp;lang=en"></script><br />
+                            <a href="http://www.symantec.com/ssl-certificates" target="_blank" style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a>
+                        </td>
+                    </tr>
+                </table>-->
+                <!-- Rending Body from child page-->
+                @RenderSection("featured", required: false)
+                @RenderBody()
+                <div id="divContainer" ng-view></div>
+
+                <hr />
+                <!-- Footer Inofmraion-->
+
+
+
+            </div>
+
+
+
+
+    </form>
+
+    <div class="panel-footer col-lg-12">
+        <div class="col-lg-3">
+            &#169 {{ 'GENCOPYRT' | translate }} 2013 @objLoggedIn.SangamName
+        </div>
+        <div class="col-lg-5 text-center">
+            <div class="featurette" id="about">
+                <!------------------------code---------------start---------------->
+                <div class="col-md-12">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="https://www.facebook.com/vishwakarmamugurtham/" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <!----Code------end----------------------------------->
+            </div>
+        </div>
+        <div class="col-lg-4 text-right">
+            <img src="/Images/Mugurtham/Flag.jpg" height="19" width="35" />
+            Powered by <img src="/favicon.ico" height="25" width="40" />  Mugurtham &#174
+            &nbsp; @strProductVersion
+            <br /> Reach Mugurtham at &nbsp;&nbsp;<i class="fa fa-phone-square">&nbsp;&nbsp;+91 96770 94206</i> <i class="fa fa-envelope">&nbsp;&nbsp;info@mugurtham.com</i>
+        </div>
+    </div>
+    <div class="modal fade alert" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">Partnering for positive change in our community</h3>
+                </div>
+                <div class="modal-body">
+
+                    <h4>Panjasakthi</h4><br />
+                    <h4>Viswamalar</h4><br />
+                    <h4>Kalpana Thirumana Thagaval Maiyam</h4><br />
+                    <h4>ViswaJothi</h4><br />
+
+                </div>
+                
+                <div id="fb-root">Like us to get instant alerts when new profile gets added and more..</div>
+                <div class="fb-like" data-href="https://www.facebook.com/vishwakarmamugurtham/" data-width="500" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="panel-footer col-lg-12 text-justify">
+         <img src="/favicon.ico" height="25" width="40" />   Mugurtham provides superior collaborative matchmaking experience by expanding the opportunities available to meet potential life partners. Since then we have created a world renowned service that has touched the lives of millions of people all over the world and helping accelarint revenue for sangams. We have, however, never rested on our laurels. Software division providing cutting edge business solutions to Matrimony Industry. An innovator in teleMatrimony and analytics. Partner focused on quality and growth.
+     </div>
+     <div class="panel-footer col-lg-12">
+         தென்னிந்தியாவில் குறிப்பாக, தமிழ்நாட்டில் வாழும் 65மூ ஐந்தொழில் விஸ்வகர்மா இன மக்களுக்கு தங்கள் கடவுள் ஸ்ரீவிஸ்வகர்மா மற்றும் ஸ்ரீகாயத்ரி தேவி என்பதே தெரியாமல் வாழ்கிறார்கள். இதில் மீதி 30மூ பேர் கூட ஸ்ரீசதாசிவமூர்த்தியை தான் ஸ்ரீவிஸ்வகர்மா என்று வணங்குகிறார்கள். தன் ஐந்து நெற்றிகளில் திருநாமம் அணிந்தவர் தான் ஸ்ரீவிஸ்வகர்மா (படைப்புக் கடவுள்) மாறாக, விபுதி பட்டை அணிந்தவர் ஸ்ரீசதாசிவமூர்த்தி (அழிக்கும் கடவுள்). நம்மவர்கள் பெரும்பாலும் ஸ்ரீசதாசிவமூர்த்தியையே ஸ்ரீவிஸ்வகர்மா என்று நினைத்து வணங்கி வருகிறார்கள். இது இரு பெரும் கடவுள்களும் கிட்டத்தட்ட ஒரே மாதிரி இருப்பதால் ஏற்பட்ட குழப்பம் மற்றும் இது ஏற்படுத்தப்பட்ட குழப்பம். ஸ்ரீவிஸ்வகர்மாவின் முக்கிய ஆயுதமான சுத்தியல் ஸ்ரீசதாசிவமூர்த்தியின் கரங்கள் எதிலும் இருக்காது என்பது குறிப்பிடத்தக்கது மற்றும் கவனிக்கத்தக்கது. ஆதியில் சிவபெருமானும் நாமத்துடன் தான் ஸ்ரீவிஸ்வகர்மாவால் படைக்கப்பட்டார் ஆனால் பிறகு வந்த காலத்தி்ல் தனது அழிக்கும் பணி சிறப்பாக நடைபெறுகிறது என்பதை உலகிற்கும் மற்றவர்களுக்கும் உணர்த்தும் பொருட்டே சிவபெருமான் தான் அழித்தப் பொருட்களின் சாம்பலை எடுத்து விபுதியாகப் புசிக் கொண்டார் என்பது வரலாறு.
+         உலகின் முதல் வேதமான ரிக் வேதம் ஸ்ரீவிஸ்வகர்மா-வை அனைத்து கடவுள்களையும் படைத்தவர் என்றும் அவர்களுக்கு பெயரிட்டவர் என்றும் பிரபஞ்சத்தின் மூலக்கருவையே தோற்றுவித்தவர் என்றும் 10ம் அதிகாரம் முழுவதும் தெளிவாக கூறுகிறது. ரிக் வேதம் மட்டுமல்ல, யஜுர், சாம, அதர்வணம் என அனைத்து வேதங்களும் நம் கடவுள் ஸ்ரீவிஸ்வகர்மாவை துதிப்பாடுகின்றன. எந்த யாகம் நடத்தப்பட்டாலும் அதில் ஸ்ரீவிஸ்வகர்மாவிற்கு உரிய அவில்பாகம் கொடுக்கப்படுகிறது. எந்த கோயில் கும்பாபிஷேகம் நடந்தாலும் புனித நீரை நம் குலக்கடவுள் ஸ்ரீவிஸ்வகர்மாவின் பெயரை சொல்லி தான் தெளிக்கப்படுகிறது. அப்படிப்பட்ட உயர்ந்த கடவுளை நாம், அதாவது அவரின் குழந்தைகள் மறந்து விட்டு கஷ்டப்பட்டு கொண்டு இருக்கிறோம்.
+     </div>-->
+
+    @Scripts.Render("~/bundles/MugurthamJQuery")
+    @Scripts.Render("~/bundles/MugurthamBootstrap")
+    @Scripts.Render("~/bundles/MugurthamToastr")
+    @Scripts.Render("~/bundles/MugurthamAngularJS")
+    @Scripts.Render("~/bundles/MugurthamJqplot")
+    @Scripts.Render("~/bundles/MugurthamFlexSlider")
+    @Scripts.Render("~/bundles/MugurthamLightbox")
+    @Scripts.Render("~/bundles/MugurthamPaging")
+    @Scripts.Render("~/bundles/MugurthamSlider")
+    @Scripts.Render("~/bundles/MugurthamApp")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Mugurtham.js/Mugurtham/Controllers/ControllerMugurtham.js")"></script>
+    @Scripts.Render("~/bundles/MugurthamDashboard")
+    @Scripts.Render("~/bundles/MugurthamControllerProfile")
+    @Scripts.Render("~/bundles/MugurthamControllerSearch")
+    @Scripts.Render("~/bundles/MugurthamControllerUserChamber")
+    @Scripts.Render("~/bundles/MugurthamControllerFullView")
+    @Scripts.Render("~/bundles/MugurthamControllerMugurthamAdmin")
+    @Scripts.Render("~/bundles/MugurthamValidation")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            landingPageCounter();
+            setUserStyleLocale('@objLoggedIn.themeID');
+        });
+    </script>
+
+
+
+
+</body>
+</html>
