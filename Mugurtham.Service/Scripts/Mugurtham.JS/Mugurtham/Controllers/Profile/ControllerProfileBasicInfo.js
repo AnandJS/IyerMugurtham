@@ -46,7 +46,7 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
             $scope.arrHeight = ['4ft 5in - 134 cm', '4ft 6in - 137 cm', '4ft 7in - 139 cm', '4ft 8in - 142 cm', '4ft 9in - 144 cm', '4ft 10in - 147 cm', '4ft 11in - 149 cm', '5ft 1in - 154 cm', '5ft 2in - 157 cm', '5ft 3in - 160 cm', '5ft 4in - 162 cm', '5ft 5in - 165 cm', '5ft 6in - 167 cm', '5ft 7in - 170 cm', '5ft 8in - 172 cm', '5ft 9in - 175 cm', '5ft 10in - 177 cm', '5ft 11in - 180 cm', '6ft - 182 cm', '6ft 1in - 185 cm', '6ft 2in - 187 cm', '6ft 3in - 190 cm', '6ft 4in - 193 cm', '6ft 5in - 195 cm', '6in - 198 cm', '6ft 7in - 200 cm', '8in - 203 cm', '6ft 9in - 205 cm', '6ft 10in - 208 cm', '6ft 11in - 210 cm', '7ft - 213 cm'];
             $scope.arrBlodGroup = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
             $scope.arrProfileCreatedBy = ['Self', 'Parents', 'Gaurdian', 'Relative', 'Friend'];
-            $scope.arrSubCaste = ['Kamalar', 'Achari'];
+            $scope.arrSubCaste = ['Ashtasahasram', 'Brahacharnam', 'Vadama', 'Vathima', 'Others'];
             $scope.arrStar = ['Anusham', 'Aswini', 'Avittam', 'Aayilyam', 'Bharani', 'Chithirai', 'Hastham', 'Karthigai', 'Kettai', 'Makam', 'Moolam', 'Mrigasheersham', 'Pooraadam', 'Pooram', 'Poorattathi', 'Poosam', 'Punarpoosam', 'Revathi', 'Rohini', 'Sadayam', 'Swaathi', 'Thiruvaathirai', 'Thiruvonam', 'Uthiraadam', 'Uthiram', 'Uthirattathi', 'Visaakam'];
 
             if ($rootScope.globalProfileID != 'New')
