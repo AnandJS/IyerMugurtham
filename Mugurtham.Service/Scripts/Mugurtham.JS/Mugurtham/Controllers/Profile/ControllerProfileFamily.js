@@ -159,7 +159,10 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
                     FathersOccupation: data.FathersOccupation,
                     MothersOccupation: data.MothersOccupation,
                     FamilyOrigin: data.FamilyOrigin,
-                    AboutFamily: data.AboutFamily
+                    AboutFamily: data.AboutFamily,
+                    MothersSubsect: data.MothersSubSect,
+                    ParentsAlive: data.ParentsAlive
+
                 });
             }).
             error(function (data, status, headers, config) {
