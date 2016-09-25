@@ -41,6 +41,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="ParentsAlive" class="col-lg-3 control-label">{{ 'FAMPARENTSALIVE' | translate }}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlParentsAlive" ng-model="frmData[0].ParentsAlive">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="ParentsAlive in arrParentsAlive">{{ParentsAlive}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="FathersName" class="col-lg-3 control-label">{{ 'FAMFATNAM' | translate }}</label>
                             <div class="col-lg-9">
                                 <input type="text" class="form-control" id="txtFathersName" name="txtFathersName" ng-model="frmData[0].FathersName" placeholder="Name of the profiles father">
@@ -62,6 +71,12 @@
                             <label for="MothersOccupation" class="col-lg-3 control-label">{{ 'FAMMOTOCC' | translate }}</label>
                             <div class="col-lg-9">
                                 <input type="text" class="form-control" id="txtMothersOccupation" name="txtMothersOccupation" ng-model="frmData[0].MothersOccupation" placeholder="What do profiles mother work">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="MothersSubsect" class="col-lg-3 control-label">{{ 'FAMMOTSUBSEC' | translate }}</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="txtMothersSubsect" name="txtMothersSubsect" ng-model="frmData[0].MothersSubsect" placeholder="MothersSubsect">
                             </div>
                         </div>
                         <div class="form-group">

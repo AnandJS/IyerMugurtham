@@ -24,5 +24,7 @@ namespace Mugurtham.Core.Family
         public string MothersOccupation { get; set; }
         public string FamilyOrigin { get; set; }
         public string AboutFamily { get; set; }
+        public string MothersSubSect { get; set; }
+        public string ParentsAlive { get; set; }
     }
 }

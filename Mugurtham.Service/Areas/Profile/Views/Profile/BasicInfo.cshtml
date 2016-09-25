@@ -56,6 +56,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="Place of Birth" class="col-lg-3 control-label">{{'BIPOB'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" ng-model="frmData[0].PlaceOfBirth" type="text" id="txtPlaceOfBirth" name="txtPlaceOfBirth">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="Marital Status" class="col-lg-3 control-label">{{'BIMARSTATUS'  | translate}}</label>
                             <div class="col-lg-9">
                                 <select class="form-control" id="ddlMaritalStatus" ng-model="frmData[0].MaritalStatus">
@@ -189,6 +195,16 @@
                                 <select class="form-control" id="ddlStar" ng-model="frmData[0].Star">
                                     <option value="0">--Select--</option>
                                     <option ng-repeat="arrStar in arrStar" value="{{arrStar}}">{{arrStar}}</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="PAADHAM" class="col-lg-3 control-label">{{'BIPAADHAM'  | translate}}</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" id="ddlPAADHAM" ng-model="frmData[0].Paadham">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrPaadham in arrPaadham" value="{{arrPaadham}}">{{arrPaadham}}</option>
 
                                 </select>
                             </div>

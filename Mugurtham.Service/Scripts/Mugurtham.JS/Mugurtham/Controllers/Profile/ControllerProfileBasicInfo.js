@@ -48,6 +48,7 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
             $scope.arrProfileCreatedBy = ['Self', 'Parents', 'Gaurdian', 'Relative', 'Friend'];
             $scope.arrSubCaste = ['Ashtasahasram', 'Brahacharnam', 'Vadama', 'Vathima', 'Others'];
             $scope.arrStar = ['Anusham', 'Aswini', 'Avittam', 'Aayilyam', 'Bharani', 'Chithirai', 'Hastham', 'Karthigai', 'Kettai', 'Makam', 'Moolam', 'Mrigasheersham', 'Pooraadam', 'Pooram', 'Poorattathi', 'Poosam', 'Punarpoosam', 'Revathi', 'Rohini', 'Sadayam', 'Swaathi', 'Thiruvaathirai', 'Thiruvonam', 'Uthiraadam', 'Uthiram', 'Uthirattathi', 'Visaakam'];
+            $scope.arrPaadham = ['1', '2', '3', '4'];
 
             if ($rootScope.globalProfileID != 'New')
                 getBasicInfoByProfileID();
@@ -85,6 +86,8 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
             $scope.ElanUserID = '';
             $scope.PhotoPath = '';
             $scope.ProfileCreatedDate = '';
+            $scope.PlaceOfBirth = '';
+            $scope.Paadham = '';
 
             //========================================
             //GLOBAL EVENT HANDLER FOR THIS CONTROLLER
@@ -133,6 +136,8 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
                 $scope.PartnerExpectation = $scope.frmData[0].PartnerExpectation;
                 $scope.PhotoPath = $scope.frmData[0].PhotoPath;
                 $scope.ProfileCreatedDate = $scope.frmData[0].ProfileCreatedDate;
+                $scope.PlaceOfBirth = $scope.frmData[0].PlaceOfBirth;
+                $scope.Paadham = $scope.frmData[0].Paadham;
 
             }
 
@@ -174,7 +179,9 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
                         Drinking: $scope.Drinking,
                         AboutMe: $scope.AboutMe,
                         PartnerExpectation: $scope.PartnerExpectation,
-                        PhotoPath: $scope.PhotoPath
+                        PhotoPath: $scope.PhotoPath,
+                        PlaceOfBirth: $scope.PlaceOfBirth,
+                        Paadham: $scope.Paadham
                     }),
                     headers: { 'content-Type': 'application/x-www-form-urlencoded' }
                 }).
@@ -234,10 +241,12 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
                         PartnerExpectation: $scope.PartnerExpectation,
                         ElanUserID: $scope.ElanUserID,
                         PhotoPath: $scope.PhotoPath,
-                        CreatedDate: $scope.frmData[0].ProfileCreatedDate
-                    }),
-                    headers: { 'content-Type': 'application/x-www-form-urlencoded' }
-                }).
+                        CreatedDate: $scope.frmData[0].ProfileCreatedDate,
+                        PlaceOfBirth: $scope.PlaceOfBirth,
+                        Paadham: $scope.Paadham
+                }),
+            headers: { 'content-Type': 'application/x-www-form-urlencoded' }
+        }).
             success(function (data, status, headers, config) {
                 $("#body").unmask();
                 NotifySuccessStatus(2);
@@ -246,77 +255,79 @@ var ControllerProfileBasicInfo = angular.module('MugurthamApp').controller('Cont
                 $("#body").unmask();
                 NotifyErrorStatus(data, status);
             });
-            }
+}
 
 
-            //===================================================
-            //AJAX GET REQUEST - GETTING PROFILE BY ID
-            //===================================================
-            function getBasicInfoByProfileID() {
-                var strGetURL = '/BasicInfo/BasicInfoAPI/' + $scope.ProfileID;
-                $("#body").mask("Retreiving Profile please wait...");
-                $http({
-                    method: "GET", url: strGetURL
-                }).
-            success(function (data, status, headers, config) {
-                MaintainState(data);
-                $scope.SangamID = data.SangamID;
-                $scope.ElanUserID = data.ElanUserID;
-                $scope.frmData.push({
-                    ID: data.ID,
-                    SangamProfileID: data.SangamProfileID,
-                    Name: data.Name,
-                    Age: data.Age,
-                    DOB: data.DOB,
-                    TOB: data.TOB,
-                    MaritalStatus: data.MaritalStatus,
-                    NoOfChildren: data.NoOfChildren,
-                    ChildrenLivingStatus: data.ChildrenLivingStatus,
-                    Height: data.Height,
-                    Weight: data.Weight,
-                    BodyType: data.BodyType,
-                    Complexion: data.Complexion,
-                    PhysicalStatus: data.PhysicalStatus,
-                    BloodGroup: data.BloodGroup,
-                    MotherTongue: data.MotherTongue,
-                    ProfileCreatedBy: data.ProfileCreatedBy,
-                    Religion: data.Religion,
-                    Caste: data.Caste,
-                    SubCaste: data.SubCaste,
-                    Gothram: data.Gothram,
-                    Star: data.Star,
-                    Raasi: data.Raasi,
-                    HoroscopeMatch: data.HoroscopeMatch,
-                    AnyDhosham: data.AnyDhosham,
-                    Eating: data.Eating,
-                    Smoking: data.Smoking,
-                    Drinking: data.Drinking,
-                    AboutMe: data.AboutMe,
-                    PartnerExpectation: data.PartnerExpectation,
-                    PhotoPath: data.PhotoPath
-                });
+//===================================================
+//AJAX GET REQUEST - GETTING PROFILE BY ID
+//===================================================
+function getBasicInfoByProfileID() {
+    var strGetURL = '/BasicInfo/BasicInfoAPI/' + $scope.ProfileID;
+    $("#body").mask("Retreiving Profile please wait...");
+    $http({
+        method: "GET", url: strGetURL
+    }).
+success(function (data, status, headers, config) {
+    MaintainState(data);
+    $scope.SangamID = data.SangamID;
+    $scope.ElanUserID = data.ElanUserID;
+    $scope.frmData.push({
+        ID: data.ID,
+        SangamProfileID: data.SangamProfileID,
+        Name: data.Name,
+        Age: data.Age,
+        DOB: data.DOB,
+        TOB: data.TOB,
+        MaritalStatus: data.MaritalStatus,
+        NoOfChildren: data.NoOfChildren,
+        ChildrenLivingStatus: data.ChildrenLivingStatus,
+        Height: data.Height,
+        Weight: data.Weight,
+        BodyType: data.BodyType,
+        Complexion: data.Complexion,
+        PhysicalStatus: data.PhysicalStatus,
+        BloodGroup: data.BloodGroup,
+        MotherTongue: data.MotherTongue,
+        ProfileCreatedBy: data.ProfileCreatedBy,
+        Religion: data.Religion,
+        Caste: data.Caste,
+        SubCaste: data.SubCaste,
+        Gothram: data.Gothram,
+        Star: data.Star,
+        Raasi: data.Raasi,
+        HoroscopeMatch: data.HoroscopeMatch,
+        AnyDhosham: data.AnyDhosham,
+        Eating: data.Eating,
+        Smoking: data.Smoking,
+        Drinking: data.Drinking,
+        AboutMe: data.AboutMe,
+        PartnerExpectation: data.PartnerExpectation,
+        PhotoPath: data.PhotoPath,
+        PlaceOfBirth: data.PlaceOfBirth,
+        Paadham: data.Paadham
+    });
 
-                /*Logic to add 1 day to JQuery Formatting*/
-                //<!--http://www.miuaiga.com/index.cfm/2009/11/11/Javascript-How-To-Add-a-Number-of-Days-to-a-Date-->
-                var intAddNoOfDays = 1;
-                var startDate = new Date(Date.parse(data.DOB));
-                var dtDOB = startDate;
-                dtDOB.setDate(startDate.getDate() + intAddNoOfDays);
-                /*Logic to add 1 day to JQuery Formatting Ends*/
+    /*Logic to add 1 day to JQuery Formatting*/
+    //<!--http://www.miuaiga.com/index.cfm/2009/11/11/Javascript-How-To-Add-a-Number-of-Days-to-a-Date-->
+    var intAddNoOfDays = 1;
+    var startDate = new Date(Date.parse(data.DOB));
+    var dtDOB = startDate;
+    dtDOB.setDate(startDate.getDate() + intAddNoOfDays);
+    /*Logic to add 1 day to JQuery Formatting Ends*/
 
-                if (data.DOB != null)
-                    $scope.frmData[0].DOB = $.datepicker.formatDate('dd-M-yy', new Date(dtDOB));
-                if (data.CreatedDate != null) {
-                    $scope.frmData[0].ProfileCreatedDate = data.CreatedDate;
-                }
-                $("#body").unmask();
-            }).
-            error(function (data, status, headers, config) {
-                $("#body").unmask();
-                NotifyErrorStatus(data, status);
-            });
-            }
-        }])
+    if (data.DOB != null)
+        $scope.frmData[0].DOB = $.datepicker.formatDate('dd-M-yy', new Date(dtDOB));
+    if (data.CreatedDate != null) {
+        $scope.frmData[0].ProfileCreatedDate = data.CreatedDate;
+    }
+    $("#body").unmask();
+}).
+error(function (data, status, headers, config) {
+    $("#body").unmask();
+    NotifyErrorStatus(data, status);
+});
+}
+}])
 
 function MaintainState(arrFrmData) {
     $('input[name="radProfileGender"][value="' + arrFrmData.Gender + '"]').prop('checked', true);

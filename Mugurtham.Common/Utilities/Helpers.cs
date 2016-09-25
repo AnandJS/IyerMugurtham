@@ -153,9 +153,9 @@ namespace Mugurtham.Common.Utilities
             StringBuilder objSB = new StringBuilder();
             objSB.Append("==============================================================================" + "\r\n");
             objSB.Append(DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString() + "\r\n");
-            objSB.Append(objEx.Message + "\r\n");
-            objSB.Append(objEx.InnerException + "\r\n");
-            objSB.Append(objEx.StackTrace + "\r\n");
+            objSB.Append("Message : " + objEx.Message + "\r\n\r\n");
+            objSB.Append("InnerException : " + objEx.InnerException + "\r\n\r\n");
+            objSB.Append("StackTrace : " + objEx.StackTrace + "\r\n\r\n");
             objSB.Append("==============================================================================" + "\r\n");
             // flush every 20 seconds as you do it
             File.AppendAllText(strLogilePath, objSB.ToString());

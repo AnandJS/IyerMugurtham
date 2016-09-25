@@ -58,6 +58,6 @@ namespace Mugurtham.DTO.Profile
         public string SangamID { get; set; }
         public string ModifiedBy { get; set; }
         public string PhotoPath { get; set; }
-
+        public string Paadham { get; set; }
     }
 }

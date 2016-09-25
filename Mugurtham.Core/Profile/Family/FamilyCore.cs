@@ -106,6 +106,9 @@ namespace Mugurtham.Core.Family
                 objDTOFamily.CreateDate = DateTime.Now;
                 objDTOFamily.ModifiedDate = DateTime.Now;
                 objDTOFamily.ProfileID = objFamilyCoreEntity.ProfileID;
+                objDTOFamily.MothersSubSect = objFamilyCoreEntity.MothersSubSect;
+                objDTOFamily.ParentsAlive = objFamilyCoreEntity.ParentsAlive;
+
             }
             catch (Exception objEx)
             {
@@ -132,6 +135,8 @@ namespace Mugurtham.Core.Family
                 objFamilyCoreEntity.NoOfSisters = objDTOFamily.NoOfSisters;
                 objFamilyCoreEntity.MarriedSisters = objDTOFamily.SistersMarried;
                 objFamilyCoreEntity.ProfileID = objDTOFamily.ProfileID;
+                objFamilyCoreEntity.MothersSubSect = objDTOFamily.MothersSubSect;
+                objFamilyCoreEntity.ParentsAlive = objDTOFamily.ParentsAlive;
             }
             catch (Exception objEx)
             {

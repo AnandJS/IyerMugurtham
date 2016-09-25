@@ -32,5 +32,8 @@ namespace Mugurtham.DTO.Profile
         public string AboutFamily { get; set; }
         public string CreatedBy { get; set; }
         public string ModifiedBy { get; set; }
+        public string MothersSubSect { get; set; }
+        public string ParentsAlive { get; set; }
+
     }
 }

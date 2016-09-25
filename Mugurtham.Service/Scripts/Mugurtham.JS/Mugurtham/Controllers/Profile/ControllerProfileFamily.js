@@ -15,7 +15,8 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
             $scope.arrFamilyValue = ['Traditional', 'Liberal', 'Orthodox', 'Moderate'];
             $scope.arrFamilyType = ['Joint Family', 'Other', 'Nuclear Family'];
             $scope.arrFamilyStatus = ['Middle Class Family', 'Rich', 'Upper Middle Class Family', 'Affluent'];
-            $scope.arrSiblings = ['0', '1', '2', '3','4','5','6'];
+            $scope.arrSiblings = ['0', '1', '2', '3', '4', '5', '6'];
+            $scope.arrParentsAlive = ['Father', 'Mother', 'Both'];
             // Form Control Variables
             getFamilyByProfileID();
             $scope.FamilyID = '';
@@ -33,6 +34,8 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
             $scope.NoOfSisters = '';
             $scope.MarriedSisters = '';
             $scope.AboutFamily = '';
+            $scope.MothersSubsect = '';
+            $scope.ParentsAlive = '';
 
             //========================================
             //GLOBAL EVENT HANDLER FOR THIS CONTROLLER
@@ -63,6 +66,8 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
                 $scope.NoOfSisters = $scope.frmData[0].NoOfSisters;
                 $scope.MarriedSisters = $scope.frmData[0].MarriedSisters;
                 $scope.AboutFamily = $scope.frmData[0].AboutFamily;
+                $scope.MothersSubsect = $scope.frmData[0].MothersSubsect;
+                $scope.ParentsAlive = $scope.frmData[0].ParentsAlive;
             }
 
             //===================================================
@@ -84,7 +89,9 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
                         FathersOccupation: $scope.FathersOccupation,
                         MothersOccupation: $scope.MothersOccupation,
                         FamilyOrigin: $scope.FamilyOrigin,
-                        AboutFamily: $scope.AboutFamily
+                        AboutFamily: $scope.AboutFamily,
+                        MothersSubsect: $scope.MothersSubsect,
+                        ParentsAlive: $scope.ParentsAlive
                     }),
                     headers: { 'content-Type': 'application/x-www-form-urlencoded' }
                 }).
@@ -115,7 +122,9 @@ var ControllerProfileFamily = angular.module('MugurthamApp').controller('Control
                         FathersOccupation: $scope.FathersOccupation,
                         MothersOccupation: $scope.MothersOccupation,
                         FamilyOrigin: $scope.FamilyOrigin,
-                        AboutFamily: $scope.AboutFamily
+                        AboutFamily: $scope.AboutFamily,
+                        MothersSubsect: $scope.MothersSubsect,
+                        ParentsAlive: $scope.ParentsAlive
                     }),
                     headers: { 'content-Type': 'application/x-www-form-urlencoded' }
                 }).

@@ -228,6 +228,8 @@ namespace Mugurtham.Core.BasicInfo
                 objBasicInfo.ZodiacMonth = objBasicInfoCoreEntity.ZodiacMonth;
                 objBasicInfo.ZodiacDay = objBasicInfoCoreEntity.ZodiacYear;
                 objBasicInfo.PhotoPath = objBasicInfoCoreEntity.PhotoPath;
+                objBasicInfo.Paadham = objBasicInfoCoreEntity.Paadham;
+
             }
             catch (Exception objEx)
             {
@@ -282,6 +284,7 @@ namespace Mugurtham.Core.BasicInfo
                 objBasicInfoCoreEntity.ZodiacYear = objBasicInfo.ZodiacYear;
                 objBasicInfoCoreEntity.PhotoPath = objBasicInfo.PhotoPath;
                 objBasicInfoCoreEntity.CreatedDate = objBasicInfo.CreatedDate;
+                objBasicInfoCoreEntity.Paadham = objBasicInfo.Paadham;
             }
             catch (Exception objEx)
             {

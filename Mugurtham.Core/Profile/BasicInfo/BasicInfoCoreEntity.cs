@@ -53,5 +53,6 @@ namespace Mugurtham.Core.BasicInfo
         public string Zodiac { get; set; }
         public string TOB { get; set; }
         public string PhotoPath { get; set; }
+        public string Paadham { get; set; }
     }
 }

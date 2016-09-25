@@ -11,36 +11,108 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-12">
+                    <table width="100%" border="1">
+                        <tr>
+                            <td>
+                                Dasa Balance
+                            </td>
+                            <td>
+                                <select class="form-control" id="ddlDasaBalance" ng-model="frmData[0].DasaBalance">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrDasaBalance in arrDasaBalance" value="{{arrDasaBalance}}">{{arrDasaBalance}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                Year
+                            </td>
+                            <td>
+                                <select class="form-control" id="ddlyear" ng-model="frmData[0].Year">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrYear in arrYear" value="{{arrYear}}">{{arrYear}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                Month
+                            </td>
+                            <td>
+                                <select class="form-control" id="ddlMonth" ng-model="frmData[0].Month">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrMonth in arrMonth" value="{{arrMonth}}">{{arMonth}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                Days
+                            </td>
+                            <td>
+                                <select class="form-control" id="ddlDays" ng-model="frmData[0].Days">
+                                    <option value="0">--Select--</option>
+                                    <option ng-repeat="arrDays in arrDays" value="{{arrDays}}">{{arrDays}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-12">
                     <!--start-->
                     <table width="100%" border="1">
                         <tr>
                             <td width="20%">
                                 <table id="ckKattam1" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_0" type="checkbox" name="ckKattam1_0" value="so" /><label for="ckKattam1_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_1" type="checkbox" name="ckKattam1_1" value="bu" /><label for="ckKattam1_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_2" type="checkbox" name="ckKattam1_2" value="gu" /><label for="ckKattam1_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_3" type="checkbox" name="ckKattam1_3" value="ke" /><label for="ckKattam1_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_0" type="checkbox" name="ckKattam1_0" value="so" /><label for="ckKattam1_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_1" type="checkbox" name="ckKattam1_1" value="bu" /><label for="ckKattam1_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_2" type="checkbox" name="ckKattam1_2" value="gu" /><label for="ckKattam1_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_3" type="checkbox" name="ckKattam1_3" value="ke" /><label for="ckKattam1_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_4" type="checkbox" name="ckKattam1_4" value="ch" /><label for="ckKattam1_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_5" type="checkbox" name="ckKattam1_5" value="su" /><label for="ckKattam1_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_6" type="checkbox" name="ckKattam1_6" value="ra" /><label for="ckKattam1_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_7" type="checkbox" name="ckKattam1_7" value="la" /><label for="ckKattam1_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_4" type="checkbox" name="ckKattam1_4" value="ch" /><label for="ckKattam1_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_5" type="checkbox" name="ckKattam1_5" value="su" /><label for="ckKattam1_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_6" type="checkbox" name="ckKattam1_6" value="ra" /><label for="ckKattam1_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_7" type="checkbox" name="ckKattam1_7" value="la" /><label for="ckKattam1_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_8" type="checkbox" name="ckKattam1_8" value="se" /><label for="ckKattam1_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam1_9" type="checkbox" name="ckKattam1_9" value="sa" /><label for="ckKattam1_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_8" type="checkbox" name="ckKattam1_8" value="se" /><label for="ckKattam1_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam1_9" type="checkbox" name="ckKattam1_9" value="sa" /><label for="ckKattam1_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -49,30 +121,60 @@
                             <td>
                                 <table id="ckKattam2" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_0" type="checkbox" name="ckKattam2_0" value="so" /><label for="ckKattam2_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_1" type="checkbox" name="ckKattam2_1" value="bu" /><label for="ckKattam2_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_2" type="checkbox" name="ckKattam2_2" value="gu" /><label for="ckKattam2_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_3" type="checkbox" name="ckKattam2_3" value="ke" /><label for="ckKattam2_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_0" type="checkbox" name="ckKattam2_0" value="so" /><label for="ckKattam2_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_1" type="checkbox" name="ckKattam2_1" value="bu" /><label for="ckKattam2_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_2" type="checkbox" name="ckKattam2_2" value="gu" /><label for="ckKattam2_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_3" type="checkbox" name="ckKattam2_3" value="ke" /><label for="ckKattam2_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_4" type="checkbox" name="ckKattam2_4" value="ch" /><label for="ckKattam2_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_5" type="checkbox" name="ckKattam2_5" value="su" /><label for="ckKattam2_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_6" type="checkbox" name="ckKattam2_6" value="ra" /><label for="ckKattam2_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_7" type="checkbox" name="ckKattam2_7" value="la" /><label for="ckKattam2_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_4" type="checkbox" name="ckKattam2_4" value="ch" /><label for="ckKattam2_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_5" type="checkbox" name="ckKattam2_5" value="su" /><label for="ckKattam2_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_6" type="checkbox" name="ckKattam2_6" value="ra" /><label for="ckKattam2_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_7" type="checkbox" name="ckKattam2_7" value="la" /><label for="ckKattam2_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_8" type="checkbox" name="ckKattam2_8" value="se" /><label for="ckKattam2_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam2_9" type="checkbox" name="ckKattam2_9" value="sa" /><label for="ckKattam2_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_8" type="checkbox" name="ckKattam2_8" value="se" /><label for="ckKattam2_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam2_9" type="checkbox" name="ckKattam2_9" value="sa" /><label for="ckKattam2_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -81,30 +183,60 @@
                             <td>
                                 <table id="ckKattam3" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_0" type="checkbox" name="ckKattam3_0" value="so" /><label for="ckKattam3_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_1" type="checkbox" name="ckKattam3_1" value="bu" /><label for="ckKattam3_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_2" type="checkbox" name="ckKattam3_2" value="gu" /><label for="ckKattam3_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_3" type="checkbox" name="ckKattam3_3" value="ke" /><label for="ckKattam3_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_0" type="checkbox" name="ckKattam3_0" value="so" /><label for="ckKattam3_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_1" type="checkbox" name="ckKattam3_1" value="bu" /><label for="ckKattam3_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_2" type="checkbox" name="ckKattam3_2" value="gu" /><label for="ckKattam3_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_3" type="checkbox" name="ckKattam3_3" value="ke" /><label for="ckKattam3_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_4" type="checkbox" name="ckKattam3_4" value="ch" /><label for="ckKattam3_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_5" type="checkbox" name="ckKattam3_5" value="su" /><label for="ckKattam3_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_6" type="checkbox" name="ckKattam3_6" value="ra" /><label for="ckKattam3_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_7" type="checkbox" name="ckKattam3_7" value="la" /><label for="ckKattam3_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_4" type="checkbox" name="ckKattam3_4" value="ch" /><label for="ckKattam3_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_5" type="checkbox" name="ckKattam3_5" value="su" /><label for="ckKattam3_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_6" type="checkbox" name="ckKattam3_6" value="ra" /><label for="ckKattam3_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_7" type="checkbox" name="ckKattam3_7" value="la" /><label for="ckKattam3_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_8" type="checkbox" name="ckKattam3_8" value="se" /><label for="ckKattam3_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam3_9" type="checkbox" name="ckKattam3_9" value="sa" /><label for="ckKattam3_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_8" type="checkbox" name="ckKattam3_8" value="se" /><label for="ckKattam3_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam3_9" type="checkbox" name="ckKattam3_9" value="sa" /><label for="ckKattam3_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -113,30 +245,60 @@
                             <td>
                                 <table id="ckKattam4" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_0" type="checkbox" name="ckKattam4_0" value="so" /><label for="ckKattam4_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_1" type="checkbox" name="ckKattam4_1" value="bu" /><label for="ckKattam4_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_2" type="checkbox" name="ckKattam4_2" value="gu" /><label for="ckKattam4_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_3" type="checkbox" name="ckKattam4_3" value="ke" /><label for="ckKattam4_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_0" type="checkbox" name="ckKattam4_0" value="so" /><label for="ckKattam4_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_1" type="checkbox" name="ckKattam4_1" value="bu" /><label for="ckKattam4_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_2" type="checkbox" name="ckKattam4_2" value="gu" /><label for="ckKattam4_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_3" type="checkbox" name="ckKattam4_3" value="ke" /><label for="ckKattam4_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_4" type="checkbox" name="ckKattam4_4" value="ch" /><label for="ckKattam4_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_5" type="checkbox" name="ckKattam4_5" value="su" /><label for="ckKattam4_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_6" type="checkbox" name="ckKattam4_6" value="ra" /><label for="ckKattam4_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_7" type="checkbox" name="ckKattam4_7" value="la" /><label for="ckKattam4_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_4" type="checkbox" name="ckKattam4_4" value="ch" /><label for="ckKattam4_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_5" type="checkbox" name="ckKattam4_5" value="su" /><label for="ckKattam4_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_6" type="checkbox" name="ckKattam4_6" value="ra" /><label for="ckKattam4_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_7" type="checkbox" name="ckKattam4_7" value="la" /><label for="ckKattam4_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_8" type="checkbox" name="ckKattam4_8" value="se" /><label for="ckKattam4_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam4_9" type="checkbox" name="ckKattam4_9" value="sa" /><label for="ckKattam4_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_8" type="checkbox" name="ckKattam4_8" value="se" /><label for="ckKattam4_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam4_9" type="checkbox" name="ckKattam4_9" value="sa" /><label for="ckKattam4_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -147,64 +309,125 @@
                             <td>
                                 <table id="ckKattam5" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_0" type="checkbox" name="ckKattam5_0" value="so" /><label for="ckKattam5_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_1" type="checkbox" name="ckKattam5_1" value="bu" /><label for="ckKattam5_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_2" type="checkbox" name="ckKattam5_2" value="gu" /><label for="ckKattam5_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_3" type="checkbox" name="ckKattam5_3" value="ke" /><label for="ckKattam5_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_0" type="checkbox" name="ckKattam5_0" value="so" /><label for="ckKattam5_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_1" type="checkbox" name="ckKattam5_1" value="bu" /><label for="ckKattam5_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_2" type="checkbox" name="ckKattam5_2" value="gu" /><label for="ckKattam5_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_3" type="checkbox" name="ckKattam5_3" value="ke" /><label for="ckKattam5_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_4" type="checkbox" name="ckKattam5_4" value="ch" /><label for="ckKattam5_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_5" type="checkbox" name="ckKattam5_5" value="su" /><label for="ckKattam5_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_6" type="checkbox" name="ckKattam5_6" value="ra" /><label for="ckKattam5_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_7" type="checkbox" name="ckKattam5_7" value="la" /><label for="ckKattam5_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_4" type="checkbox" name="ckKattam5_4" value="ch" /><label for="ckKattam5_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_5" type="checkbox" name="ckKattam5_5" value="su" /><label for="ckKattam5_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_6" type="checkbox" name="ckKattam5_6" value="ra" /><label for="ckKattam5_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_7" type="checkbox" name="ckKattam5_7" value="la" /><label for="ckKattam5_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_8" type="checkbox" name="ckKattam5_8" value="se" /><label for="ckKattam5_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam5_9" type="checkbox" name="ckKattam5_9" value="sa" /><label for="ckKattam5_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_8" type="checkbox" name="ckKattam5_8" value="se" /><label for="ckKattam5_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam5_9" type="checkbox" name="ckKattam5_9" value="sa" /><label for="ckKattam5_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
                                 </table>
                             </td>
-                            <td colspan="2" rowspan="2" valign="middle" align="center">RAASI 
+                            <td colspan="2" rowspan="2" valign="middle" align="center">
+                                RAASI
                             </td>
                             <td>
                                 <table id="ckKattam6" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_0" type="checkbox" name="ckKattam6_0" value="so" /><label for="ckKattam6_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_1" type="checkbox" name="ckKattam6_1" value="bu" /><label for="ckKattam6_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_2" type="checkbox" name="ckKattam6_2" value="gu" /><label for="ckKattam6_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_3" type="checkbox" name="ckKattam6_3" value="ke" /><label for="ckKattam6_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_0" type="checkbox" name="ckKattam6_0" value="so" /><label for="ckKattam6_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_1" type="checkbox" name="ckKattam6_1" value="bu" /><label for="ckKattam6_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_2" type="checkbox" name="ckKattam6_2" value="gu" /><label for="ckKattam6_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_3" type="checkbox" name="ckKattam6_3" value="ke" /><label for="ckKattam6_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_4" type="checkbox" name="ckKattam6_4" value="ch" /><label for="ckKattam6_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_5" type="checkbox" name="ckKattam6_5" value="su" /><label for="ckKattam6_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_6" type="checkbox" name="ckKattam6_6" value="ra" /><label for="ckKattam6_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_7" type="checkbox" name="ckKattam6_7" value="la" /><label for="ckKattam6_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_4" type="checkbox" name="ckKattam6_4" value="ch" /><label for="ckKattam6_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_5" type="checkbox" name="ckKattam6_5" value="su" /><label for="ckKattam6_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_6" type="checkbox" name="ckKattam6_6" value="ra" /><label for="ckKattam6_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_7" type="checkbox" name="ckKattam6_7" value="la" /><label for="ckKattam6_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_8" type="checkbox" name="ckKattam6_8" value="se" /><label for="ckKattam6_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam6_9" type="checkbox" name="ckKattam6_9" value="sa" /><label for="ckKattam6_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_8" type="checkbox" name="ckKattam6_8" value="se" /><label for="ckKattam6_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam6_9" type="checkbox" name="ckKattam6_9" value="sa" /><label for="ckKattam6_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -215,30 +438,60 @@
                             <td>
                                 <table id="ckKattam7" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_0" type="checkbox" name="ckKattam7_0" value="so" /><label for="ckKattam7_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_1" type="checkbox" name="ckKattam7_1" value="bu" /><label for="ckKattam7_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_2" type="checkbox" name="ckKattam7_2" value="gu" /><label for="ckKattam7_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_3" type="checkbox" name="ckKattam7_3" value="ke" /><label for="ckKattam7_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_0" type="checkbox" name="ckKattam7_0" value="so" /><label for="ckKattam7_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_1" type="checkbox" name="ckKattam7_1" value="bu" /><label for="ckKattam7_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_2" type="checkbox" name="ckKattam7_2" value="gu" /><label for="ckKattam7_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_3" type="checkbox" name="ckKattam7_3" value="ke" /><label for="ckKattam7_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_4" type="checkbox" name="ckKattam7_4" value="ch" /><label for="ckKattam7_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_5" type="checkbox" name="ckKattam7_5" value="su" /><label for="ckKattam7_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_6" type="checkbox" name="ckKattam7_6" value="ra" /><label for="ckKattam7_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_7" type="checkbox" name="ckKattam7_7" value="la" /><label for="ckKattam7_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_4" type="checkbox" name="ckKattam7_4" value="ch" /><label for="ckKattam7_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_5" type="checkbox" name="ckKattam7_5" value="su" /><label for="ckKattam7_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_6" type="checkbox" name="ckKattam7_6" value="ra" /><label for="ckKattam7_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_7" type="checkbox" name="ckKattam7_7" value="la" /><label for="ckKattam7_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_8" type="checkbox" name="ckKattam7_8" value="se" /><label for="ckKattam7_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam7_9" type="checkbox" name="ckKattam7_9" value="sa" /><label for="ckKattam7_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_8" type="checkbox" name="ckKattam7_8" value="se" /><label for="ckKattam7_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam7_9" type="checkbox" name="ckKattam7_9" value="sa" /><label for="ckKattam7_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -247,30 +500,60 @@
                             <td>
                                 <table id="ckKattam8" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_0" type="checkbox" name="ckKattam8_0" value="so" /><label for="ckKattam8_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_1" type="checkbox" name="ckKattam8_1" value="bu" /><label for="ckKattam8_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_2" type="checkbox" name="ckKattam8_2" value="gu" /><label for="ckKattam8_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_3" type="checkbox" name="ckKattam8_3" value="ke" /><label for="ckKattam8_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_0" type="checkbox" name="ckKattam8_0" value="so" /><label for="ckKattam8_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_1" type="checkbox" name="ckKattam8_1" value="bu" /><label for="ckKattam8_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_2" type="checkbox" name="ckKattam8_2" value="gu" /><label for="ckKattam8_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_3" type="checkbox" name="ckKattam8_3" value="ke" /><label for="ckKattam8_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_4" type="checkbox" name="ckKattam8_4" value="ch" /><label for="ckKattam8_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_5" type="checkbox" name="ckKattam8_5" value="su" /><label for="ckKattam8_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_6" type="checkbox" name="ckKattam8_6" value="ra" /><label for="ckKattam8_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_7" type="checkbox" name="ckKattam8_7" value="la" /><label for="ckKattam8_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_4" type="checkbox" name="ckKattam8_4" value="ch" /><label for="ckKattam8_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_5" type="checkbox" name="ckKattam8_5" value="su" /><label for="ckKattam8_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_6" type="checkbox" name="ckKattam8_6" value="ra" /><label for="ckKattam8_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_7" type="checkbox" name="ckKattam8_7" value="la" /><label for="ckKattam8_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_8" type="checkbox" name="ckKattam8_8" value="se" /><label for="ckKattam8_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam8_9" type="checkbox" name="ckKattam8_9" value="sa" /><label for="ckKattam8_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_8" type="checkbox" name="ckKattam8_8" value="se" /><label for="ckKattam8_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam8_9" type="checkbox" name="ckKattam8_9" value="sa" /><label for="ckKattam8_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -281,30 +564,60 @@
                             <td>
                                 <table id="ckKattam9" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_0" type="checkbox" name="ckKattam9_0" value="so" /><label for="ckKattam9_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_1" type="checkbox" name="ckKattam9_1" value="bu" /><label for="ckKattam9_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_2" type="checkbox" name="ckKattam9_2" value="gu" /><label for="ckKattam9_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_3" type="checkbox" name="ckKattam9_3" value="ke" /><label for="ckKattam9_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_0" type="checkbox" name="ckKattam9_0" value="so" /><label for="ckKattam9_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_1" type="checkbox" name="ckKattam9_1" value="bu" /><label for="ckKattam9_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_2" type="checkbox" name="ckKattam9_2" value="gu" /><label for="ckKattam9_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_3" type="checkbox" name="ckKattam9_3" value="ke" /><label for="ckKattam9_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_4" type="checkbox" name="ckKattam9_4" value="ch" /><label for="ckKattam9_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_5" type="checkbox" name="ckKattam9_5" value="su" /><label for="ckKattam9_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_6" type="checkbox" name="ckKattam9_6" value="ra" /><label for="ckKattam9_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_7" type="checkbox" name="ckKattam9_7" value="la" /><label for="ckKattam9_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_4" type="checkbox" name="ckKattam9_4" value="ch" /><label for="ckKattam9_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_5" type="checkbox" name="ckKattam9_5" value="su" /><label for="ckKattam9_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_6" type="checkbox" name="ckKattam9_6" value="ra" /><label for="ckKattam9_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_7" type="checkbox" name="ckKattam9_7" value="la" /><label for="ckKattam9_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_8" type="checkbox" name="ckKattam9_8" value="se" /><label for="ckKattam9_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam9_9" type="checkbox" name="ckKattam9_9" value="sa" /><label for="ckKattam9_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_8" type="checkbox" name="ckKattam9_8" value="se" /><label for="ckKattam9_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam9_9" type="checkbox" name="ckKattam9_9" value="sa" /><label for="ckKattam9_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -313,30 +626,60 @@
                             <td>
                                 <table id="ckKattam10" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_0" type="checkbox" name="ckKattam10_0" value="so" /><label for="ckKattam10_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_1" type="checkbox" name="ckKattam10_1" value="bu" /><label for="ckKattam10_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_2" type="checkbox" name="ckKattam10_2" value="gu" /><label for="ckKattam10_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_3" type="checkbox" name="ckKattam10_3" value="ke" /><label for="ckKattam10_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_0" type="checkbox" name="ckKattam10_0" value="so" /><label for="ckKattam10_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_1" type="checkbox" name="ckKattam10_1" value="bu" /><label for="ckKattam10_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_2" type="checkbox" name="ckKattam10_2" value="gu" /><label for="ckKattam10_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_3" type="checkbox" name="ckKattam10_3" value="ke" /><label for="ckKattam10_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_4" type="checkbox" name="ckKattam10_4" value="ch" /><label for="ckKattam10_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_5" type="checkbox" name="ckKattam10_5" value="su" /><label for="ckKattam10_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_6" type="checkbox" name="ckKattam10_6" value="ra" /><label for="ckKattam10_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_7" type="checkbox" name="ckKattam10_7" value="la" /><label for="ckKattam10_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_4" type="checkbox" name="ckKattam10_4" value="ch" /><label for="ckKattam10_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_5" type="checkbox" name="ckKattam10_5" value="su" /><label for="ckKattam10_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_6" type="checkbox" name="ckKattam10_6" value="ra" /><label for="ckKattam10_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_7" type="checkbox" name="ckKattam10_7" value="la" /><label for="ckKattam10_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_8" type="checkbox" name="ckKattam10_8" value="se" /><label for="ckKattam10_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam10_9" type="checkbox" name="ckKattam10_9" value="sa" /><label for="ckKattam10_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_8" type="checkbox" name="ckKattam10_8" value="se" /><label for="ckKattam10_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam10_9" type="checkbox" name="ckKattam10_9" value="sa" /><label for="ckKattam10_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -345,30 +688,60 @@
                             <td>
                                 <table id="ckKattam11" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_0" type="checkbox" name="ckKattam11_0" value="so" /><label for="ckKattam11_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_1" type="checkbox" name="ckKattam11_1" value="bu" /><label for="ckKattam11_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_2" type="checkbox" name="ckKattam11_2" value="gu" /><label for="ckKattam11_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_3" type="checkbox" name="ckKattam11_3" value="ke" /><label for="ckKattam11_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_0" type="checkbox" name="ckKattam11_0" value="so" /><label for="ckKattam11_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_1" type="checkbox" name="ckKattam11_1" value="bu" /><label for="ckKattam11_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_2" type="checkbox" name="ckKattam11_2" value="gu" /><label for="ckKattam11_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_3" type="checkbox" name="ckKattam11_3" value="ke" /><label for="ckKattam11_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_4" type="checkbox" name="ckKattam11_4" value="ch" /><label for="ckKattam11_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_5" type="checkbox" name="ckKattam11_5" value="su" /><label for="ckKattam11_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_6" type="checkbox" name="ckKattam11_6" value="ra" /><label for="ckKattam11_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_7" type="checkbox" name="ckKattam11_7" value="la" /><label for="ckKattam11_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_4" type="checkbox" name="ckKattam11_4" value="ch" /><label for="ckKattam11_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_5" type="checkbox" name="ckKattam11_5" value="su" /><label for="ckKattam11_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_6" type="checkbox" name="ckKattam11_6" value="ra" /><label for="ckKattam11_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_7" type="checkbox" name="ckKattam11_7" value="la" /><label for="ckKattam11_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_8" type="checkbox" name="ckKattam11_8" value="se" /><label for="ckKattam11_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam11_9" type="checkbox" name="ckKattam11_9" value="sa" /><label for="ckKattam11_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_8" type="checkbox" name="ckKattam11_8" value="se" /><label for="ckKattam11_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam11_9" type="checkbox" name="ckKattam11_9" value="sa" /><label for="ckKattam11_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -377,30 +750,60 @@
                             <td>
                                 <table id="ckKattam12" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_0" type="checkbox" name="ckKattam12_0" value="so" /><label for="ckKattam12_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_1" type="checkbox" name="ckKattam12_1" value="bu" /><label for="ckKattam12_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_2" type="checkbox" name="ckKattam12_2" value="gu" /><label for="ckKattam12_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_3" type="checkbox" name="ckKattam12_3" value="ke" /><label for="ckKattam12_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_0" type="checkbox" name="ckKattam12_0" value="so" /><label for="ckKattam12_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_1" type="checkbox" name="ckKattam12_1" value="bu" /><label for="ckKattam12_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_2" type="checkbox" name="ckKattam12_2" value="gu" /><label for="ckKattam12_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_3" type="checkbox" name="ckKattam12_3" value="ke" /><label for="ckKattam12_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_4" type="checkbox" name="ckKattam12_4" value="ch" /><label for="ckKattam12_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_5" type="checkbox" name="ckKattam12_5" value="su" /><label for="ckKattam12_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_6" type="checkbox" name="ckKattam12_6" value="ra" /><label for="ckKattam12_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_7" type="checkbox" name="ckKattam12_7" value="la" /><label for="ckKattam12_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_4" type="checkbox" name="ckKattam12_4" value="ch" /><label for="ckKattam12_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_5" type="checkbox" name="ckKattam12_5" value="su" /><label for="ckKattam12_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_6" type="checkbox" name="ckKattam12_6" value="ra" /><label for="ckKattam12_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_7" type="checkbox" name="ckKattam12_7" value="la" /><label for="ckKattam12_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_8" type="checkbox" name="ckKattam12_8" value="se" /><label for="ckKattam12_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckKattam12_9" type="checkbox" name="ckKattam12_9" value="sa" /><label for="ckKattam12_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_8" type="checkbox" name="ckKattam12_8" value="se" /><label for="ckKattam12_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckKattam12_9" type="checkbox" name="ckKattam12_9" value="sa" /><label for="ckKattam12_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -416,30 +819,60 @@
                             <td width="20%">
                                 <table id="ckAmsamKattam1" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_0" type="checkbox" name="ckAmsamKattam1_0" value="so" /><label for="ckAmsamKattam1_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_1" type="checkbox" name="ckAmsamKattam1_1" value="bu" /><label for="ckAmsamKattam1_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_2" type="checkbox" name="ckAmsamKattam1_2" value="gu" /><label for="ckAmsamKattam1_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_3" type="checkbox" name="ckAmsamKattam1_3" value="ke" /><label for="ckAmsamKattam1_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_0" type="checkbox" name="ckAmsamKattam1_0" value="so" /><label for="ckAmsamKattam1_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_1" type="checkbox" name="ckAmsamKattam1_1" value="bu" /><label for="ckAmsamKattam1_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_2" type="checkbox" name="ckAmsamKattam1_2" value="gu" /><label for="ckAmsamKattam1_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_3" type="checkbox" name="ckAmsamKattam1_3" value="ke" /><label for="ckAmsamKattam1_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_4" type="checkbox" name="ckAmsamKattam1_4" value="ch" /><label for="ckAmsamKattam1_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_5" type="checkbox" name="ckAmsamKattam1_5" value="su" /><label for="ckAmsamKattam1_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_6" type="checkbox" name="ckAmsamKattam1_6" value="ra" /><label for="ckAmsamKattam1_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_7" type="checkbox" name="ckAmsamKattam1_7" value="la" /><label for="ckAmsamKattam1_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_4" type="checkbox" name="ckAmsamKattam1_4" value="ch" /><label for="ckAmsamKattam1_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_5" type="checkbox" name="ckAmsamKattam1_5" value="su" /><label for="ckAmsamKattam1_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_6" type="checkbox" name="ckAmsamKattam1_6" value="ra" /><label for="ckAmsamKattam1_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_7" type="checkbox" name="ckAmsamKattam1_7" value="la" /><label for="ckAmsamKattam1_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_8" type="checkbox" name="ckAmsamKattam1_8" value="se" /><label for="ckAmsamKattam1_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam1_9" type="checkbox" name="ckAmsamKattam1_9" value="sa" /><label for="ckAmsamKattam1_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_8" type="checkbox" name="ckAmsamKattam1_8" value="se" /><label for="ckAmsamKattam1_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam1_9" type="checkbox" name="ckAmsamKattam1_9" value="sa" /><label for="ckAmsamKattam1_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -448,30 +881,60 @@
                             <td>
                                 <table id="ckAmsamKattam2" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_0" type="checkbox" name="ckAmsamKattam2_0" value="so" /><label for="ckAmsamKattam2_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_1" type="checkbox" name="ckAmsamKattam2_1" value="bu" /><label for="ckAmsamKattam2_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_2" type="checkbox" name="ckAmsamKattam2_2" value="gu" /><label for="ckAmsamKattam2_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_3" type="checkbox" name="ckAmsamKattam2_3" value="ke" /><label for="ckAmsamKattam2_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_0" type="checkbox" name="ckAmsamKattam2_0" value="so" /><label for="ckAmsamKattam2_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_1" type="checkbox" name="ckAmsamKattam2_1" value="bu" /><label for="ckAmsamKattam2_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_2" type="checkbox" name="ckAmsamKattam2_2" value="gu" /><label for="ckAmsamKattam2_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_3" type="checkbox" name="ckAmsamKattam2_3" value="ke" /><label for="ckAmsamKattam2_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_4" type="checkbox" name="ckAmsamKattam2_4" value="ch" /><label for="ckAmsamKattam2_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_5" type="checkbox" name="ckAmsamKattam2_5" value="su" /><label for="ckAmsamKattam2_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_6" type="checkbox" name="ckAmsamKattam2_6" value="ra" /><label for="ckAmsamKattam2_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_7" type="checkbox" name="ckAmsamKattam2_7" value="la" /><label for="ckAmsamKattam2_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_4" type="checkbox" name="ckAmsamKattam2_4" value="ch" /><label for="ckAmsamKattam2_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_5" type="checkbox" name="ckAmsamKattam2_5" value="su" /><label for="ckAmsamKattam2_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_6" type="checkbox" name="ckAmsamKattam2_6" value="ra" /><label for="ckAmsamKattam2_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_7" type="checkbox" name="ckAmsamKattam2_7" value="la" /><label for="ckAmsamKattam2_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_8" type="checkbox" name="ckAmsamKattam2_8" value="se" /><label for="ckAmsamKattam2_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam2_9" type="checkbox" name="ckAmsamKattam2_9" value="sa" /><label for="ckAmsamKattam2_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_8" type="checkbox" name="ckAmsamKattam2_8" value="se" /><label for="ckAmsamKattam2_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam2_9" type="checkbox" name="ckAmsamKattam2_9" value="sa" /><label for="ckAmsamKattam2_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -480,30 +943,60 @@
                             <td>
                                 <table id="ckAmsamKattam3" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_0" type="checkbox" name="ckAmsamKattam3_0" value="so" /><label for="ckAmsamKattam3_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_1" type="checkbox" name="ckAmsamKattam3_1" value="bu" /><label for="ckAmsamKattam3_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_2" type="checkbox" name="ckAmsamKattam3_2" value="gu" /><label for="ckAmsamKattam3_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_3" type="checkbox" name="ckAmsamKattam3_3" value="ke" /><label for="ckAmsamKattam3_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_0" type="checkbox" name="ckAmsamKattam3_0" value="so" /><label for="ckAmsamKattam3_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_1" type="checkbox" name="ckAmsamKattam3_1" value="bu" /><label for="ckAmsamKattam3_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_2" type="checkbox" name="ckAmsamKattam3_2" value="gu" /><label for="ckAmsamKattam3_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_3" type="checkbox" name="ckAmsamKattam3_3" value="ke" /><label for="ckAmsamKattam3_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_4" type="checkbox" name="ckAmsamKattam3_4" value="ch" /><label for="ckAmsamKattam3_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_5" type="checkbox" name="ckAmsamKattam3_5" value="su" /><label for="ckAmsamKattam3_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_6" type="checkbox" name="ckAmsamKattam3_6" value="ra" /><label for="ckAmsamKattam3_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_7" type="checkbox" name="ckAmsamKattam3_7" value="la" /><label for="ckAmsamKattam3_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_4" type="checkbox" name="ckAmsamKattam3_4" value="ch" /><label for="ckAmsamKattam3_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_5" type="checkbox" name="ckAmsamKattam3_5" value="su" /><label for="ckAmsamKattam3_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_6" type="checkbox" name="ckAmsamKattam3_6" value="ra" /><label for="ckAmsamKattam3_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_7" type="checkbox" name="ckAmsamKattam3_7" value="la" /><label for="ckAmsamKattam3_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_8" type="checkbox" name="ckAmsamKattam3_8" value="se" /><label for="ckAmsamKattam3_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam3_9" type="checkbox" name="ckAmsamKattam3_9" value="sa" /><label for="ckAmsamKattam3_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_8" type="checkbox" name="ckAmsamKattam3_8" value="se" /><label for="ckAmsamKattam3_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam3_9" type="checkbox" name="ckAmsamKattam3_9" value="sa" /><label for="ckAmsamKattam3_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -512,30 +1005,60 @@
                             <td>
                                 <table id="ckAmsamKattam4" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_0" type="checkbox" name="ckAmsamKattam4_0" value="so" /><label for="ckAmsamKattam4_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_1" type="checkbox" name="ckAmsamKattam4_1" value="bu" /><label for="ckAmsamKattam4_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_2" type="checkbox" name="ckAmsamKattam4_2" value="gu" /><label for="ckAmsamKattam4_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_3" type="checkbox" name="ckAmsamKattam4_3" value="ke" /><label for="ckAmsamKattam4_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_0" type="checkbox" name="ckAmsamKattam4_0" value="so" /><label for="ckAmsamKattam4_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_1" type="checkbox" name="ckAmsamKattam4_1" value="bu" /><label for="ckAmsamKattam4_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_2" type="checkbox" name="ckAmsamKattam4_2" value="gu" /><label for="ckAmsamKattam4_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_3" type="checkbox" name="ckAmsamKattam4_3" value="ke" /><label for="ckAmsamKattam4_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_4" type="checkbox" name="ckAmsamKattam4_4" value="ch" /><label for="ckAmsamKattam4_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_5" type="checkbox" name="ckAmsamKattam4_5" value="su" /><label for="ckAmsamKattam4_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_6" type="checkbox" name="ckAmsamKattam4_6" value="ra" /><label for="ckAmsamKattam4_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_7" type="checkbox" name="ckAmsamKattam4_7" value="la" /><label for="ckAmsamKattam4_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_4" type="checkbox" name="ckAmsamKattam4_4" value="ch" /><label for="ckAmsamKattam4_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_5" type="checkbox" name="ckAmsamKattam4_5" value="su" /><label for="ckAmsamKattam4_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_6" type="checkbox" name="ckAmsamKattam4_6" value="ra" /><label for="ckAmsamKattam4_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_7" type="checkbox" name="ckAmsamKattam4_7" value="la" /><label for="ckAmsamKattam4_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_8" type="checkbox" name="ckAmsamKattam4_8" value="se" /><label for="ckAmsamKattam4_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam4_9" type="checkbox" name="ckAmsamKattam4_9" value="sa" /><label for="ckAmsamKattam4_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_8" type="checkbox" name="ckAmsamKattam4_8" value="se" /><label for="ckAmsamKattam4_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam4_9" type="checkbox" name="ckAmsamKattam4_9" value="sa" /><label for="ckAmsamKattam4_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -546,64 +1069,125 @@
                             <td>
                                 <table id="ckAmsamKattam5" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_0" type="checkbox" name="ckAmsamKattam5_0" value="so" /><label for="ckAmsamKattam5_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_1" type="checkbox" name="ckAmsamKattam5_1" value="bu" /><label for="ckAmsamKattam5_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_2" type="checkbox" name="ckAmsamKattam5_2" value="gu" /><label for="ckAmsamKattam5_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_3" type="checkbox" name="ckAmsamKattam5_3" value="ke" /><label for="ckAmsamKattam5_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_0" type="checkbox" name="ckAmsamKattam5_0" value="so" /><label for="ckAmsamKattam5_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_1" type="checkbox" name="ckAmsamKattam5_1" value="bu" /><label for="ckAmsamKattam5_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_2" type="checkbox" name="ckAmsamKattam5_2" value="gu" /><label for="ckAmsamKattam5_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_3" type="checkbox" name="ckAmsamKattam5_3" value="ke" /><label for="ckAmsamKattam5_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_4" type="checkbox" name="ckAmsamKattam5_4" value="ch" /><label for="ckAmsamKattam5_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_5" type="checkbox" name="ckAmsamKattam5_5" value="su" /><label for="ckAmsamKattam5_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_6" type="checkbox" name="ckAmsamKattam5_6" value="ra" /><label for="ckAmsamKattam5_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_7" type="checkbox" name="ckAmsamKattam5_7" value="la" /><label for="ckAmsamKattam5_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_4" type="checkbox" name="ckAmsamKattam5_4" value="ch" /><label for="ckAmsamKattam5_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_5" type="checkbox" name="ckAmsamKattam5_5" value="su" /><label for="ckAmsamKattam5_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_6" type="checkbox" name="ckAmsamKattam5_6" value="ra" /><label for="ckAmsamKattam5_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_7" type="checkbox" name="ckAmsamKattam5_7" value="la" /><label for="ckAmsamKattam5_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_8" type="checkbox" name="ckAmsamKattam5_8" value="se" /><label for="ckAmsamKattam5_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam5_9" type="checkbox" name="ckAmsamKattam5_9" value="sa" /><label for="ckAmsamKattam5_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_8" type="checkbox" name="ckAmsamKattam5_8" value="se" /><label for="ckAmsamKattam5_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam5_9" type="checkbox" name="ckAmsamKattam5_9" value="sa" /><label for="ckAmsamKattam5_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
                                 </table>
                             </td>
-                            <td colspan="2" rowspan="2" valign="middle" align="center">AMSAM 
+                            <td colspan="2" rowspan="2" valign="middle" align="center">
+                                AMSAM
                             </td>
                             <td>
                                 <table id="ckAmsamKattam6" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_0" type="checkbox" name="ckAmsamKattam6_0" value="so" /><label for="ckAmsamKattam6_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_1" type="checkbox" name="ckAmsamKattam6_1" value="bu" /><label for="ckAmsamKattam6_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_2" type="checkbox" name="ckAmsamKattam6_2" value="gu" /><label for="ckAmsamKattam6_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_3" type="checkbox" name="ckAmsamKattam6_3" value="ke" /><label for="ckAmsamKattam6_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_0" type="checkbox" name="ckAmsamKattam6_0" value="so" /><label for="ckAmsamKattam6_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_1" type="checkbox" name="ckAmsamKattam6_1" value="bu" /><label for="ckAmsamKattam6_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_2" type="checkbox" name="ckAmsamKattam6_2" value="gu" /><label for="ckAmsamKattam6_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_3" type="checkbox" name="ckAmsamKattam6_3" value="ke" /><label for="ckAmsamKattam6_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_4" type="checkbox" name="ckAmsamKattam6_4" value="ch" /><label for="ckAmsamKattam6_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_5" type="checkbox" name="ckAmsamKattam6_5" value="su" /><label for="ckAmsamKattam6_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_6" type="checkbox" name="ckAmsamKattam6_6" value="ra" /><label for="ckAmsamKattam6_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_7" type="checkbox" name="ckAmsamKattam6_7" value="la" /><label for="ckAmsamKattam6_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_4" type="checkbox" name="ckAmsamKattam6_4" value="ch" /><label for="ckAmsamKattam6_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_5" type="checkbox" name="ckAmsamKattam6_5" value="su" /><label for="ckAmsamKattam6_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_6" type="checkbox" name="ckAmsamKattam6_6" value="ra" /><label for="ckAmsamKattam6_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_7" type="checkbox" name="ckAmsamKattam6_7" value="la" /><label for="ckAmsamKattam6_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_8" type="checkbox" name="ckAmsamKattam6_8" value="se" /><label for="ckAmsamKattam6_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam6_9" type="checkbox" name="ckAmsamKattam6_9" value="sa" /><label for="ckAmsamKattam6_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_8" type="checkbox" name="ckAmsamKattam6_8" value="se" /><label for="ckAmsamKattam6_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam6_9" type="checkbox" name="ckAmsamKattam6_9" value="sa" /><label for="ckAmsamKattam6_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -614,30 +1198,60 @@
                             <td>
                                 <table id="ckAmsamKattam7" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_0" type="checkbox" name="ckAmsamKattam7_0" value="so" /><label for="ckAmsamKattam7_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_1" type="checkbox" name="ckAmsamKattam7_1" value="bu" /><label for="ckAmsamKattam7_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_2" type="checkbox" name="ckAmsamKattam7_2" value="gu" /><label for="ckAmsamKattam7_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_3" type="checkbox" name="ckAmsamKattam7_3" value="ke" /><label for="ckAmsamKattam7_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_0" type="checkbox" name="ckAmsamKattam7_0" value="so" /><label for="ckAmsamKattam7_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_1" type="checkbox" name="ckAmsamKattam7_1" value="bu" /><label for="ckAmsamKattam7_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_2" type="checkbox" name="ckAmsamKattam7_2" value="gu" /><label for="ckAmsamKattam7_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_3" type="checkbox" name="ckAmsamKattam7_3" value="ke" /><label for="ckAmsamKattam7_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_4" type="checkbox" name="ckAmsamKattam7_4" value="ch" /><label for="ckAmsamKattam7_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_5" type="checkbox" name="ckAmsamKattam7_5" value="su" /><label for="ckAmsamKattam7_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_6" type="checkbox" name="ckAmsamKattam7_6" value="ra" /><label for="ckAmsamKattam7_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_7" type="checkbox" name="ckAmsamKattam7_7" value="la" /><label for="ckAmsamKattam7_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_4" type="checkbox" name="ckAmsamKattam7_4" value="ch" /><label for="ckAmsamKattam7_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_5" type="checkbox" name="ckAmsamKattam7_5" value="su" /><label for="ckAmsamKattam7_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_6" type="checkbox" name="ckAmsamKattam7_6" value="ra" /><label for="ckAmsamKattam7_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_7" type="checkbox" name="ckAmsamKattam7_7" value="la" /><label for="ckAmsamKattam7_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_8" type="checkbox" name="ckAmsamKattam7_8" value="se" /><label for="ckAmsamKattam7_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam7_9" type="checkbox" name="ckAmsamKattam7_9" value="sa" /><label for="ckAmsamKattam7_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_8" type="checkbox" name="ckAmsamKattam7_8" value="se" /><label for="ckAmsamKattam7_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam7_9" type="checkbox" name="ckAmsamKattam7_9" value="sa" /><label for="ckAmsamKattam7_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -646,30 +1260,60 @@
                             <td>
                                 <table id="ckAmsamKattam8" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_0" type="checkbox" name="ckAmsamKattam8_0" value="so" /><label for="ckAmsamKattam8_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_1" type="checkbox" name="ckAmsamKattam8_1" value="bu" /><label for="ckAmsamKattam8_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_2" type="checkbox" name="ckAmsamKattam8_2" value="gu" /><label for="ckAmsamKattam8_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_3" type="checkbox" name="ckAmsamKattam8_3" value="ke" /><label for="ckAmsamKattam8_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_0" type="checkbox" name="ckAmsamKattam8_0" value="so" /><label for="ckAmsamKattam8_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_1" type="checkbox" name="ckAmsamKattam8_1" value="bu" /><label for="ckAmsamKattam8_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_2" type="checkbox" name="ckAmsamKattam8_2" value="gu" /><label for="ckAmsamKattam8_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_3" type="checkbox" name="ckAmsamKattam8_3" value="ke" /><label for="ckAmsamKattam8_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_4" type="checkbox" name="ckAmsamKattam8_4" value="ch" /><label for="ckAmsamKattam8_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_5" type="checkbox" name="ckAmsamKattam8_5" value="su" /><label for="ckAmsamKattam8_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_6" type="checkbox" name="ckAmsamKattam8_6" value="ra" /><label for="ckAmsamKattam8_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_7" type="checkbox" name="ckAmsamKattam8_7" value="la" /><label for="ckAmsamKattam8_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_4" type="checkbox" name="ckAmsamKattam8_4" value="ch" /><label for="ckAmsamKattam8_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_5" type="checkbox" name="ckAmsamKattam8_5" value="su" /><label for="ckAmsamKattam8_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_6" type="checkbox" name="ckAmsamKattam8_6" value="ra" /><label for="ckAmsamKattam8_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_7" type="checkbox" name="ckAmsamKattam8_7" value="la" /><label for="ckAmsamKattam8_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_8" type="checkbox" name="ckAmsamKattam8_8" value="se" /><label for="ckAmsamKattam8_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam8_9" type="checkbox" name="ckAmsamKattam8_9" value="sa" /><label for="ckAmsamKattam8_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_8" type="checkbox" name="ckAmsamKattam8_8" value="se" /><label for="ckAmsamKattam8_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam8_9" type="checkbox" name="ckAmsamKattam8_9" value="sa" /><label for="ckAmsamKattam8_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -680,30 +1324,60 @@
                             <td>
                                 <table id="ckAmsamKattam9" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_0" type="checkbox" name="ckAmsamKattam9_0" value="so" /><label for="ckAmsamKattam9_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_1" type="checkbox" name="ckAmsamKattam9_1" value="bu" /><label for="ckAmsamKattam9_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_2" type="checkbox" name="ckAmsamKattam9_2" value="gu" /><label for="ckAmsamKattam9_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_3" type="checkbox" name="ckAmsamKattam9_3" value="ke" /><label for="ckAmsamKattam9_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_0" type="checkbox" name="ckAmsamKattam9_0" value="so" /><label for="ckAmsamKattam9_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_1" type="checkbox" name="ckAmsamKattam9_1" value="bu" /><label for="ckAmsamKattam9_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_2" type="checkbox" name="ckAmsamKattam9_2" value="gu" /><label for="ckAmsamKattam9_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_3" type="checkbox" name="ckAmsamKattam9_3" value="ke" /><label for="ckAmsamKattam9_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_4" type="checkbox" name="ckAmsamKattam9_4" value="ch" /><label for="ckAmsamKattam9_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_5" type="checkbox" name="ckAmsamKattam9_5" value="su" /><label for="ckAmsamKattam9_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_6" type="checkbox" name="ckAmsamKattam9_6" value="ra" /><label for="ckAmsamKattam9_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_7" type="checkbox" name="ckAmsamKattam9_7" value="la" /><label for="ckAmsamKattam9_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_4" type="checkbox" name="ckAmsamKattam9_4" value="ch" /><label for="ckAmsamKattam9_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_5" type="checkbox" name="ckAmsamKattam9_5" value="su" /><label for="ckAmsamKattam9_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_6" type="checkbox" name="ckAmsamKattam9_6" value="ra" /><label for="ckAmsamKattam9_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_7" type="checkbox" name="ckAmsamKattam9_7" value="la" /><label for="ckAmsamKattam9_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_8" type="checkbox" name="ckAmsamKattam9_8" value="se" /><label for="ckAmsamKattam9_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam9_9" type="checkbox" name="ckAmsamKattam9_9" value="sa" /><label for="ckAmsamKattam9_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_8" type="checkbox" name="ckAmsamKattam9_8" value="se" /><label for="ckAmsamKattam9_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam9_9" type="checkbox" name="ckAmsamKattam9_9" value="sa" /><label for="ckAmsamKattam9_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -712,30 +1386,60 @@
                             <td>
                                 <table id="ckAmsamKattam10" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_0" type="checkbox" name="ckAmsamKattam10_0" value="so" /><label for="ckAmsamKattam10_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_1" type="checkbox" name="ckAmsamKattam10_1" value="bu" /><label for="ckAmsamKattam10_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_2" type="checkbox" name="ckAmsamKattam10_2" value="gu" /><label for="ckAmsamKattam10_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_3" type="checkbox" name="ckAmsamKattam10_3" value="ke" /><label for="ckAmsamKattam10_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_0" type="checkbox" name="ckAmsamKattam10_0" value="so" /><label for="ckAmsamKattam10_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_1" type="checkbox" name="ckAmsamKattam10_1" value="bu" /><label for="ckAmsamKattam10_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_2" type="checkbox" name="ckAmsamKattam10_2" value="gu" /><label for="ckAmsamKattam10_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_3" type="checkbox" name="ckAmsamKattam10_3" value="ke" /><label for="ckAmsamKattam10_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_4" type="checkbox" name="ckAmsamKattam10_4" value="ch" /><label for="ckAmsamKattam10_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_5" type="checkbox" name="ckAmsamKattam10_5" value="su" /><label for="ckAmsamKattam10_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_6" type="checkbox" name="ckAmsamKattam10_6" value="ra" /><label for="ckAmsamKattam10_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_7" type="checkbox" name="ckAmsamKattam10_7" value="la" /><label for="ckAmsamKattam10_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_4" type="checkbox" name="ckAmsamKattam10_4" value="ch" /><label for="ckAmsamKattam10_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_5" type="checkbox" name="ckAmsamKattam10_5" value="su" /><label for="ckAmsamKattam10_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_6" type="checkbox" name="ckAmsamKattam10_6" value="ra" /><label for="ckAmsamKattam10_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_7" type="checkbox" name="ckAmsamKattam10_7" value="la" /><label for="ckAmsamKattam10_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_8" type="checkbox" name="ckAmsamKattam10_8" value="se" /><label for="ckAmsamKattam10_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam10_9" type="checkbox" name="ckAmsamKattam10_9" value="sa" /><label for="ckAmsamKattam10_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_8" type="checkbox" name="ckAmsamKattam10_8" value="se" /><label for="ckAmsamKattam10_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam10_9" type="checkbox" name="ckAmsamKattam10_9" value="sa" /><label for="ckAmsamKattam10_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -744,30 +1448,60 @@
                             <td>
                                 <table id="ckAmsamKattam11" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_0" type="checkbox" name="ckAmsamKattam11_0" value="so" /><label for="ckAmsamKattam11_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_1" type="checkbox" name="ckAmsamKattam11_1" value="bu" /><label for="ckAmsamKattam11_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_2" type="checkbox" name="ckAmsamKattam11_2" value="gu" /><label for="ckAmsamKattam11_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_3" type="checkbox" name="ckAmsamKattam11_3" value="ke" /><label for="ckAmsamKattam11_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_0" type="checkbox" name="ckAmsamKattam11_0" value="so" /><label for="ckAmsamKattam11_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_1" type="checkbox" name="ckAmsamKattam11_1" value="bu" /><label for="ckAmsamKattam11_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_2" type="checkbox" name="ckAmsamKattam11_2" value="gu" /><label for="ckAmsamKattam11_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_3" type="checkbox" name="ckAmsamKattam11_3" value="ke" /><label for="ckAmsamKattam11_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_4" type="checkbox" name="ckAmsamKattam11_4" value="ch" /><label for="ckAmsamKattam11_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_5" type="checkbox" name="ckAmsamKattam11_5" value="su" /><label for="ckAmsamKattam11_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_6" type="checkbox" name="ckAmsamKattam11_6" value="ra" /><label for="ckAmsamKattam11_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_7" type="checkbox" name="ckAmsamKattam11_7" value="la" /><label for="ckAmsamKattam11_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_4" type="checkbox" name="ckAmsamKattam11_4" value="ch" /><label for="ckAmsamKattam11_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_5" type="checkbox" name="ckAmsamKattam11_5" value="su" /><label for="ckAmsamKattam11_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_6" type="checkbox" name="ckAmsamKattam11_6" value="ra" /><label for="ckAmsamKattam11_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_7" type="checkbox" name="ckAmsamKattam11_7" value="la" /><label for="ckAmsamKattam11_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_8" type="checkbox" name="ckAmsamKattam11_8" value="se" /><label for="ckAmsamKattam11_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam11_9" type="checkbox" name="ckAmsamKattam11_9" value="sa" /><label for="ckAmsamKattam11_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_8" type="checkbox" name="ckAmsamKattam11_8" value="se" /><label for="ckAmsamKattam11_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam11_9" type="checkbox" name="ckAmsamKattam11_9" value="sa" /><label for="ckAmsamKattam11_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>
@@ -776,30 +1510,60 @@
                             <td>
                                 <table id="ckAmsamKattam12" nowrap="true" style="width: 20px;">
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_0" type="checkbox" name="ckAmsamKattam12_0" value="so" /><label for="ckAmsamKattam12_0">{{ 'HORSOORIYAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_1" type="checkbox" name="ckAmsamKattam12_1" value="bu" /><label for="ckAmsamKattam12_1">{{ 'HORBUDHAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_2" type="checkbox" name="ckAmsamKattam12_2" value="gu" /><label for="ckAmsamKattam12_2">{{ 'HORGURU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_3" type="checkbox" name="ckAmsamKattam12_3" value="ke" /><label for="ckAmsamKattam12_3">{{ 'HORKETHU' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_0" type="checkbox" name="ckAmsamKattam12_0" value="so" /><label for="ckAmsamKattam12_0">{{ 'HORSOORIYAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_1" type="checkbox" name="ckAmsamKattam12_1" value="bu" /><label for="ckAmsamKattam12_1">{{ 'HORBUDHAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_2" type="checkbox" name="ckAmsamKattam12_2" value="gu" /><label for="ckAmsamKattam12_2">{{ 'HORGURU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_3" type="checkbox" name="ckAmsamKattam12_3" value="ke" /><label for="ckAmsamKattam12_3">{{ 'HORKETHU' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_4" type="checkbox" name="ckAmsamKattam12_4" value="ch" /><label for="ckAmsamKattam12_4">{{ 'HORCHANDRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_5" type="checkbox" name="ckAmsamKattam12_5" value="su" /><label for="ckAmsamKattam12_5">{{ 'HORSUKRAN' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_6" type="checkbox" name="ckAmsamKattam12_6" value="ra" /><label for="ckAmsamKattam12_6">{{ 'HORRAGHU' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_7" type="checkbox" name="ckAmsamKattam12_7" value="la" /><label for="ckAmsamKattam12_7">{{ 'HORLAGNAM' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_4" type="checkbox" name="ckAmsamKattam12_4" value="ch" /><label for="ckAmsamKattam12_4">{{ 'HORCHANDRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_5" type="checkbox" name="ckAmsamKattam12_5" value="su" /><label for="ckAmsamKattam12_5">{{ 'HORSUKRAN' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_6" type="checkbox" name="ckAmsamKattam12_6" value="ra" /><label for="ckAmsamKattam12_6">{{ 'HORRAGHU' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_7" type="checkbox" name="ckAmsamKattam12_7" value="la" /><label for="ckAmsamKattam12_7">{{ 'HORLAGNAM' | translate }}</label>
+                                            </span>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_8" type="checkbox" name="ckAmsamKattam12_8" value="se" /><label for="ckAmsamKattam12_8">{{ 'HORSEVAI' | translate }}</label></span></td>
-                                        <td><span font-color="Blue">
-                                            <input id="ckAmsamKattam12_9" type="checkbox" name="ckAmsamKattam12_9" value="sa" /><label for="ckAmsamKattam12_9">{{ 'HORSANI' | translate }}</label></span></td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_8" type="checkbox" name="ckAmsamKattam12_8" value="se" /><label for="ckAmsamKattam12_8">{{ 'HORSEVAI' | translate }}</label>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span font-color="Blue">
+                                                <input id="ckAmsamKattam12_9" type="checkbox" name="ckAmsamKattam12_9" value="sa" /><label for="ckAmsamKattam12_9">{{ 'HORSANI' | translate }}</label>
+                                            </span>
+                                        </td>
                                         <td></td>
                                         <td></td>
                                     </tr>

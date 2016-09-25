@@ -276,7 +276,7 @@
             BIPROFCRBY: 'Profile created by',
             BIRLGN: 'Religion',
             BICST: 'Caste',
-            BISUBCST: 'SubCaste',
+            BISUBCST: 'Subsect',
             BIGOTHRM: 'Gothra(m)',
             BISTR: 'Star',
             BIRAASI: 'Raasi',
@@ -312,7 +312,7 @@
             FAMMOTNAM: 'Mothers Name',
             FAMFATOCC: 'Fathers Occupation',
             FAMMOTOCC: 'Mothers Occupation',
-            FAMANSFAMORG: 'Ancestral / Family Origin',
+            FAMANSFAMORG: 'Native Place',
             FAMNOOFBRO: 'No of Brothers',
             FAMMARDBRO: 'Married Brothers',
             FAMNOOFSIS: 'No of Sisters',
@@ -327,7 +327,7 @@
             LOCRESCTY: 'Resident City',
             LOCHLP: 'This form is used to collect information about the location information about this profile',
             REFIRF: 'Reference Information Registration Form',
-            REFNOMNAME: 'Nominee Name',
+            REFNOMNAME: 'Refered By',
             REFCONTNUM: 'Contact Number',
             REFHLP: 'This form is used to collect information about the people who are reference for this profile',
             HOROIRF: 'Horoscope Information Registration Form',
@@ -362,6 +362,10 @@
             LYTPROFILESLKDME: 'Profiles liked me',
             LYTPROFILESVWDME: 'Profiles viewed me',
             LYTPROFILESHGLTD: 'Highlighted Profiles',
+            BIPAADHAM: 'Paadham',
+            BIPOB: 'Place of Birth',
+            FAMMOTSUBSEC: 'Mothers Subsect',
+            FAMPARENTSALIVE: 'Parents Alive'
         });
         $translateProvider.translations('0449', {
             GENHOME: 'முகப்பு பக்கம்',
@@ -497,6 +501,8 @@
             LYTPROFILESLKDME: 'என்னை பிடித்தவர்கள்',
             LYTPROFILESVWDME: 'என்னை நோக்கியவர்கள்',
             LYTPROFILESHGLTD: 'தனிச்சிறப்பான வரன்கள்',
+            BIPOB: 'பிறந்த இடம்',
+            BIPAADHAM: 'பாதம்'
         });
         $translateProvider.translations('0439', {
             GENHOME: 'घर',
@@ -631,8 +637,8 @@
             LYTRCNTLYJNDPROFILES: 'प्रोफाइल हाल ही में शामिल हुए',
             LYTPROFILESLKDME: 'प्रोफाइल मुझे पसंद है',
             LYTPROFILESVWDME: 'प्रोफाइल देखा मुझे',
-            LYTPROFILESHGLTD: ' प्रकाश डाला प्रोफाइल'
-
+            LYTPROFILESHGLTD: ' प्रकाश डाला प्रोफाइल',
+            BIPOB: 'जन्म स्थान'
         });
         $translateProvider.translations('044a', {
             GENHOME: 'హోం',
@@ -767,7 +773,8 @@
             LYTRCNTLYJNDPROFILES: 'ప్రొఫైల్స్ ఇటీవల చేరారు',
             LYTPROFILESLKDME: 'ప్రొఫైల్స్ నాకు నచ్చింది',
             LYTPROFILESVWDME: 'ప్రొఫైల్స్ నాకు చూచుటకు ',
-            LYTPROFILESHGLTD: 'హైలైట్ ప్రొఫైల్స్'
+            LYTPROFILESHGLTD: 'హైలైట్ ప్రొఫైల్స్',
+            BIPOB: 'పుట్టిన స్థలం'
         });
         $translateProvider.preferredLanguage('0409');
         /*****************TRANSALATION ENDS HERE ***********************************/
